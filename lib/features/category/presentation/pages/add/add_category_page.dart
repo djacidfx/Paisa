@@ -228,12 +228,12 @@ class DeleteCategoryWidget extends StatelessWidget {
       title: Text(context.loc.dialogDeleteTitle),
       child: RichText(
         text: TextSpan(
-          text: context.loc.deleteAccount,
+          text: context.loc.deleteCategory,
           style: context.bodyMedium,
           children: [
             TextSpan(
               text: context.read<CategoryBloc>().categoryTitle,
-              style: const TextStyle(
+              style: context.bodyMedium?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
             ),

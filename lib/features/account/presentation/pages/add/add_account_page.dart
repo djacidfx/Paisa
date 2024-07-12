@@ -120,7 +120,7 @@ class AccountPageState extends State<AccountPage> {
               context.showMaterialSnackBar(
                 isAccountAddOrUpdate
                     ? context.loc.addedAccount
-                    : context.loc.updateAccount,
+                    : context.loc.updatedAccount,
                 backgroundColor: context.primaryContainer,
                 color: context.onPrimaryContainer,
               );
@@ -368,7 +368,7 @@ class DeleteAccountWidget extends StatelessWidget {
           children: [
             TextSpan(
               text: context.read<AccountBloc>().accountName,
-              style: const TextStyle(
+              style: context.bodyMedium?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
             ),

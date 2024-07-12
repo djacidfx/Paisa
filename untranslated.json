@@ -54,21 +54,8 @@
   ],
 
   "de": [
-    "defaultAccount",
-    "deletedCategory",
     "pickColorAccountDesc",
-    "back",
-    "emptyRecommendedAccountsInfo",
-    "transferCategorySubtitle",
-    "currencySelectorError",
-    "justBlackText",
-    "dateAndTime",
-    "goals",
-    "addGoalTooltip",
-    "customize",
-    "statistics",
-    "welcomeAppTitle",
-    "welcomeAppSubTitle"
+    "emptyRecommendedAccountsInfo"
   ],
 
   "es": [
@@ -214,12 +201,6 @@
     "welcomeAppSubTitle"
   ],
 
-  "pt": [
-    "statistics",
-    "welcomeAppTitle",
-    "welcomeAppSubTitle"
-  ],
-
   "ru": [
     "defaultAccount",
     "deletedCategory",
@@ -324,15 +305,8 @@
   ],
 
   "vi": [
-    "pickColorAccountDesc",
+    "lockApp",
     "emptyRecommendedAccountsInfo",
-    "transferCategorySubtitle",
-    "currencySelectorError",
-    "justBlackText",
-    "dateAndTime",
-    "goals",
-    "addGoalTooltip",
-    "customize",
     "statistics",
     "welcomeAppTitle",
     "welcomeAppSubTitle"
