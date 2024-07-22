@@ -221,5 +221,8 @@
     "customize": "Kişiselleştir",
     "statistics": "İstatistikler",
     "welcomeAppTitle": "Paisa'ya hoş geldiniz",
-    "welcomeAppSubTitle": "Daha akıllı para yönetimi için kişisel finans yardımcınız"
+    "welcomeAppSubTitle": "Daha akıllı para yönetimi için kişisel finans yardımcınız",
+    "clearData": "Verileri temizle",
+    "clearDataDesc": "Tüm verileri temizleyin ve yeni bir başlangıç yapın",
+    "clear": "Temizle",
 }
