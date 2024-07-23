@@ -40,20 +40,11 @@ jobs:
         run: flutter build apk --flavor prod --no-tree-shake-icons --split-per-abi
       - name: Create Android release appbundle
         run: flutter build appbundle --flavor prod --no-tree-shake-icons
-      - name: Rename and organize APKs
-        run: |
-          mkdir -p build/outputs/apk
-          mv build/app/outputs/flutter-apk/app-armeabi-v7a-dev-release.apk build/outputs/apk/app-armeabi-v7a-dev-release.apk
-          mv build/app/outputs/flutter-apk/app-arm64-v8a-dev-release.apk build/outputs/apk/app-arm64-v8a-dev-release.apk
-          mv build/app/outputs/flutter-apk/app-x86_64-dev-release.apk build/outputs/apk/app-x86_64-dev-release.apk
-          mv build/app/outputs/flutter-apk/app-armeabi-v7a-prod-release.apk build/outputs/apk/app-armeabi-v7a-prod-release.apk
-          mv build/app/outputs/flutter-apk/app-arm64-v8a-prod-release.apk build/outputs/apk/app-arm64-v8a-prod-release.apk
-          mv build/app/outputs/flutter-apk/app-x86_64-prod-release.apk build/outputs/apk/app-x86_64-prod-release.apk
       - name: Upload Android APKs
         uses: actions/upload-artifact@v4
         with:
           name: android-apks
-          path: build/outputs/apk/*.apk
+          path: build/app/outputs/flutter-apk/
           if-no-files-found: error
           retention-days: 1
       - name: Upload Android App Bundle
@@ -158,7 +149,7 @@ jobs:
 
   create_github_release:
     name: Create GitHub Release
-    needs: [build_android, build_ios]
+    needs: [build_android]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -166,18 +157,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: android-apks
-          path: android-apks
+          path: build/app/outputs/flutter-apk/
+      - name: Display structure of downloaded files
+        run: ls -R build/app/outputs/flutter-apk/
       - name: Download iOS IPA
         uses: actions/download-artifact@v4
         with:
           name: ios-release
           path: ios-release
-      - name: List Downloaded Files (Debug)
-        run: |
-          echo "Android APKs:"
-          ls -R android-apks
-          echo "iOS IPA:"
-          ls -R ios-release
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
