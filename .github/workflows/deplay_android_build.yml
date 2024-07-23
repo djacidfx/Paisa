@@ -117,7 +117,7 @@ jobs:
       - name: Download Android Build from artifacts
         uses: actions/download-artifact@v4
         with:
-          name: android-release
+          name: android-aab
       - name: Release Build to internal track
         uses: r0adkll/upload-google-play@v1.1.2
         with:
