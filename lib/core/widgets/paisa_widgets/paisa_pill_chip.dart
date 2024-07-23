@@ -75,7 +75,8 @@ class CategoryChip extends StatelessWidget {
     return FilterChip(
       selected: selected,
       onSelected: onSelected,
-      selectedColor: selected ? color.withOpacity(0.2) : null,
+      backgroundColor: color.withOpacity(0.2),
+      selectedColor: color.withOpacity(0.2),
       avatar: Icon(
         color: color,
         IconData(
@@ -87,7 +88,7 @@ class CategoryChip extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(28),
         side: BorderSide(
-          color: context.primary,
+          color: selected ? color : Colors.transparent,
         ),
       ),
       showCheckmark: false,

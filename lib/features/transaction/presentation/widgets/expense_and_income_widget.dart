@@ -9,8 +9,8 @@ import 'package:paisa/features/transaction/presentation/widgets/transaction_date
 import 'package:paisa/features/transaction/presentation/widgets/transaction_description_widget.dart';
 import 'package:paisa/features/transaction/presentation/widgets/transaction_name_widget.dart';
 
-class ExpenseIncomeWidget extends StatelessWidget {
-  const ExpenseIncomeWidget({
+class TransactionExpenseAndIncomeTypeWidget extends StatelessWidget {
+  const TransactionExpenseAndIncomeTypeWidget({
     super.key,
     required this.nameController,
     required this.descriptionController,

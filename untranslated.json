@@ -298,52 +298,6 @@
     "clear"
   ],
 
-  "tr": [
-    "validAmount",
-    "saveAsCSVDesc",
-    "appRate",
-    "appRateDesc",
-    "raiseABugOrRequest",
-    "raiseABugOrRequestDesc",
-    "transferName",
-    "debt",
-    "credit",
-    "enterCategory",
-    "addDebt",
-    "addCredit",
-    "enterBudget",
-    "enterDescription",
-    "validDescription",
-    "payDebt",
-    "payCredit",
-    "enterAmount",
-    "emptyDebts",
-    "emptyDebtsDesc",
-    "emptyCredit",
-    "emptyCreditDesc",
-    "enterInitialAmount",
-    "enterNumberOptional",
-    "enterAccountName",
-    "enterCardHolderName",
-    "search",
-    "addNew",
-    "delete",
-    "appBarSearch",
-    "noTransaction",
-    "enterSymbol",
-    "leftSymbol",
-    "rightSymbol",
-    "customSymbol",
-    "intoTitle",
-    "customize",
-    "statistics",
-    "welcomeAppTitle",
-    "welcomeAppSubTitle",
-    "clearData",
-    "clearDataDesc",
-    "clear"
-  ],
-
   "uk": [
     "emptyRecommendedAccountsInfo",
     "transferCategorySubtitle",
@@ -359,6 +313,10 @@
     "clearData",
     "clearDataDesc",
     "clear"
+  ],
+
+  "ur": [
+    "intoTitle"
   ],
 
   "vi": [

@@ -30,6 +30,8 @@ class _TransactionAmountWidgetState extends State<TransactionAmountWidget> {
     if (result != null) {
       setState(() {
         widget.controller.text = result;
+        double? amount = double.tryParse(result);
+        context.read<TransactionBloc>().transactionAmount = amount;
       });
     }
   }
@@ -39,6 +41,7 @@ class _TransactionAmountWidgetState extends State<TransactionAmountWidget> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: PaisaTextFormField(
+        key: const Key('transaction_amount_text_field'),
         controller: widget.controller,
         hintText: context.loc.amount,
         maxLength: 13,

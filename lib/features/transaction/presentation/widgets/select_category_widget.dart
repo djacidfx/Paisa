@@ -116,6 +116,7 @@ class SelectedItem extends StatelessWidget {
                   );
                 } else {
                   final CategoryEntity category = categories[index - 1];
+                  final Color color = Color(category.color);
                   final bool selected =
                       category.superId == expenseBloc.selectedCategoryId;
                   return CategoryChip(
@@ -124,7 +125,7 @@ class SelectedItem extends StatelessWidget {
                         .add(TransactionEvent.changeCategory(category)),
                     icon: category.icon,
                     title: category.name,
-                    color: Color(category.color),
+                    color: color,
                   );
                 }
               },

@@ -148,7 +148,7 @@ class _TransactionPageState extends State<TransactionPage> {
                       if (state.transactionType == TransactionType.transfer) {
                         return TransferWidget(controller: amountController);
                       } else {
-                        return ExpenseIncomeWidget(
+                        return TransactionExpenseAndIncomeTypeWidget(
                           amountController: amountController,
                           descriptionController: descriptionController,
                           nameController: nameController,

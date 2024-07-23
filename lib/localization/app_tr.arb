@@ -105,7 +105,7 @@
     "welcomeDesc": "Size nasıl hitap etmeliyiz?",
     "nameHint": "Ad",
     "enterNameHint": "Ad girin",
-    "imageDesc": "Sizi tanımlayan bir resim seçin"
+    "imageDesc": "Sizi tanımlayan bir resim seçin",
     "setBudget": "Kategori için bütçe belirle",
     "income": "Gelir",
     "thisMonth": "Bu ay",
@@ -224,5 +224,5 @@
     "welcomeAppSubTitle": "Daha akıllı para yönetimi için kişisel finans yardımcınız",
     "clearData": "Verileri temizle",
     "clearDataDesc": "Tüm verileri temizleyin ve yeni bir başlangıç yapın",
-    "clear": "Temizle",
+    "clear": "Temizle"
 }
