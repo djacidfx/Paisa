@@ -9,7 +9,6 @@ abstract interface class CategoryRepository {
     required String? desc,
     bool isBudget = false,
     required double? budget,
-    bool isDefault = false,
     CategoryType categoryType = CategoryType.income,
   });
 
@@ -25,11 +24,8 @@ abstract interface class CategoryRepository {
     required String? desc,
     bool isBudget = false,
     required double? budget,
-    bool isDefault = false,
     CategoryType categoryType = CategoryType.income,
   });
 
   Future<void> clear();
-
-  List<CategoryEntity> defaultCategories();
 }

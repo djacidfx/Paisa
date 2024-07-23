@@ -21,7 +21,6 @@ mixin _$CategoryEntity {
   String? get description => throw _privateConstructorUsedError;
   int get icon => throw _privateConstructorUsedError;
   bool get isBudget => throw _privateConstructorUsedError;
-  bool get isDefault => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   CategoryType get categoryType => throw _privateConstructorUsedError;
   int? get superId => throw _privateConstructorUsedError;
@@ -43,7 +42,6 @@ abstract class $CategoryEntityCopyWith<$Res> {
       String? description,
       int icon,
       bool isBudget,
-      bool isDefault,
       String name,
       CategoryType categoryType,
       int? superId});
@@ -67,7 +65,6 @@ class _$CategoryEntityCopyWithImpl<$Res, $Val extends CategoryEntity>
     Object? description = freezed,
     Object? icon = null,
     Object? isBudget = null,
-    Object? isDefault = null,
     Object? name = null,
     Object? categoryType = null,
     Object? superId = freezed,
@@ -92,10 +89,6 @@ class _$CategoryEntityCopyWithImpl<$Res, $Val extends CategoryEntity>
       isBudget: null == isBudget
           ? _value.isBudget
           : isBudget // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isDefault: null == isDefault
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
               as bool,
       name: null == name
           ? _value.name
@@ -127,7 +120,6 @@ abstract class _$$CategoryEntityImplCopyWith<$Res>
       String? description,
       int icon,
       bool isBudget,
-      bool isDefault,
       String name,
       CategoryType categoryType,
       int? superId});
@@ -149,7 +141,6 @@ class __$$CategoryEntityImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? icon = null,
     Object? isBudget = null,
-    Object? isDefault = null,
     Object? name = null,
     Object? categoryType = null,
     Object? superId = freezed,
@@ -174,10 +165,6 @@ class __$$CategoryEntityImplCopyWithImpl<$Res>
       isBudget: null == isBudget
           ? _value.isBudget
           : isBudget // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isDefault: null == isDefault
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
               as bool,
       name: null == name
           ? _value.name
@@ -204,7 +191,6 @@ class _$CategoryEntityImpl implements _CategoryEntity {
       this.description,
       required this.icon,
       this.isBudget = false,
-      this.isDefault = false,
       required this.name,
       this.categoryType = CategoryType.income,
       this.superId});
@@ -221,9 +207,6 @@ class _$CategoryEntityImpl implements _CategoryEntity {
   @JsonKey()
   final bool isBudget;
   @override
-  @JsonKey()
-  final bool isDefault;
-  @override
   final String name;
   @override
   @JsonKey()
@@ -233,7 +216,7 @@ class _$CategoryEntityImpl implements _CategoryEntity {
 
   @override
   String toString() {
-    return 'CategoryEntity(budget: $budget, color: $color, description: $description, icon: $icon, isBudget: $isBudget, isDefault: $isDefault, name: $name, categoryType: $categoryType, superId: $superId)';
+    return 'CategoryEntity(budget: $budget, color: $color, description: $description, icon: $icon, isBudget: $isBudget, name: $name, categoryType: $categoryType, superId: $superId)';
   }
 
   @override
@@ -248,8 +231,6 @@ class _$CategoryEntityImpl implements _CategoryEntity {
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.isBudget, isBudget) ||
                 other.isBudget == isBudget) &&
-            (identical(other.isDefault, isDefault) ||
-                other.isDefault == isDefault) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.categoryType, categoryType) ||
                 other.categoryType == categoryType) &&
@@ -258,7 +239,7 @@ class _$CategoryEntityImpl implements _CategoryEntity {
 
   @override
   int get hashCode => Object.hash(runtimeType, budget, color, description, icon,
-      isBudget, isDefault, name, categoryType, superId);
+      isBudget, name, categoryType, superId);
 
   @JsonKey(ignore: true)
   @override
@@ -275,7 +256,6 @@ abstract class _CategoryEntity implements CategoryEntity {
       final String? description,
       required final int icon,
       final bool isBudget,
-      final bool isDefault,
       required final String name,
       final CategoryType categoryType,
       final int? superId}) = _$CategoryEntityImpl;
@@ -290,8 +270,6 @@ abstract class _CategoryEntity implements CategoryEntity {
   int get icon;
   @override
   bool get isBudget;
-  @override
-  bool get isDefault;
   @override
   String get name;
   @override

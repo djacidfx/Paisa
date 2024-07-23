@@ -271,20 +271,23 @@ class TransactionToggleButtons extends StatelessWidget {
     return BlocBuilder<TransactionBloc, TransactionState>(
       buildWhen: (previous, current) => current is ChangeTransactionTypeState,
       builder: (context, state) {
-        return PaisaToggleButtons<TransactionType>(
-          filters: const [
-            TransactionType.expense,
-            TransactionType.income,
-            TransactionType.transfer,
-          ],
-          onFilterSelected: (type) {
-            context.read<TransactionBloc>().add(
-                  TransactionEvent.changeTransactionType(type),
-                );
-          },
-          title: (type) => type.stringValue(context),
-          isSelected: (type) =>
-              context.read<TransactionBloc>().transactionType == type,
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: PaisaToggleButtons<TransactionType>(
+            filters: const [
+              TransactionType.expense,
+              TransactionType.income,
+              TransactionType.transfer,
+            ],
+            onFilterSelected: (type) {
+              context.read<TransactionBloc>().add(
+                    TransactionEvent.changeTransactionType(type),
+                  );
+            },
+            title: (type) => type.stringValue(context),
+            isSelected: (type) =>
+                context.read<TransactionBloc>().transactionType == type,
+          ),
         );
       },
     );

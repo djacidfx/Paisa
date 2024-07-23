@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paisa/core/widgets/paisa_scaffold.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
 import 'package:paisa/config/routes.dart';
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/widgets/paisa_widget.dart';
@@ -11,7 +9,6 @@ import 'package:paisa/features/home/presentation/pages/home/home_cubit.dart';
 import 'package:paisa/features/home/presentation/pages/home/home_page.dart';
 import 'package:paisa/features/home/presentation/widgets/content_widget.dart';
 import 'package:paisa/features/home/presentation/widgets/home_search_bar.dart';
-import 'package:paisa/features/profile/presentation/pages/paisa_user_widget.dart';
 
 class HomeTabletWidget extends StatelessWidget {
   const HomeTabletWidget({

@@ -14,11 +14,7 @@ class CategoryModel extends HiveObject with _$CategoryModel implements SuperId {
     @HiveField(0) required String name,
     @HiveField(1) String? description,
     @HiveField(2) required int icon,
-    @Default(false)
-    @HiveField(3, defaultValue: false)
-    @Default(false)
-    bool isTransferCategory,
-    @HiveField(4, defaultValue: 0) int? superId,
+    @HiveField(4) int? superId,
     @HiveField(6, defaultValue: 0) double? budget,
     @HiveField(7, defaultValue: false) @Default(false) bool isBudget,
     @HiveField(8, defaultValue: 0xFFFFC107) int? color,

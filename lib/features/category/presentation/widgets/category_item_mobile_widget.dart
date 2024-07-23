@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
-
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
-import 'package:paisa/config/routes.dart';
 import 'package:paisa/core/common.dart';
+import 'package:paisa/core/common_enum.dart';
 import 'package:paisa/features/category/domain/entities/category.dart';
 
 class CategoryItemMobileWidget extends StatelessWidget {
   const CategoryItemMobileWidget({
     super.key,
     required this.category,
+    required this.onLongPress,
+    required this.onTap,
   });
 
   final CategoryEntity category;
+  final Function(String categoryName, int categoryId) onLongPress;
+  final Function(int categoryId) onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(8),
-      onTap: () {
-        CategoryPageData(
-          categoryId: category.superId,
-        ).push(context);
-      },
+      onLongPress: () => onLongPress(category.name, category.superId!),
+      onTap: () => onTap(category.superId!),
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: Color(category.color).withOpacity(0.3),
@@ -43,7 +42,9 @@ class CategoryItemMobileWidget extends StatelessWidget {
             color: context.onSurfaceVariant,
           ),
         ),
-        trailing: category.isDefault ? Icon(MdiIcons.swapHorizontal) : null,
+        trailing: category.categoryType == CategoryType.transfer
+            ? Icon(MdiIcons.swapHorizontal)
+            : null,
         subtitle: category.description == null || category.description == ''
             ? null
             : Text(

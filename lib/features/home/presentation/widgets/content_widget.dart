@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:paisa/features/account/presentation/cubit/accounts_cubit.dart';
+import 'package:paisa/features/category/presentation/cubit/categories_cubit.dart';
 import 'package:paisa/features/goals/presentation/page/goals_page.dart';
 import 'package:paisa/features/overview/presentation/overview_page.dart';
 
@@ -29,7 +30,10 @@ class ContentWidget extends StatelessWidget {
       ),
       2: const DebtsPage(),
       3: const OverViewPage(),
-      4: const CategoryListPage(),
+      4: BlocProvider(
+        create: (context) => getIt<CategoriesCubit>(),
+        child: const CategoryListPage(),
+      ),
       5: const BudgetPage(),
       6: const RecurringPage(),
       7: const GoalsPage(),

@@ -22,8 +22,6 @@ mixin _$UpdateCategoryParams {
   String? get description => throw _privateConstructorUsedError;
   int get icon => throw _privateConstructorUsedError;
   bool get isBudget => throw _privateConstructorUsedError;
-  bool get isDefault => throw _privateConstructorUsedError;
-  bool get isIncomeOrExpense => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   CategoryType get categoryType => throw _privateConstructorUsedError;
 
@@ -45,8 +43,6 @@ abstract class $UpdateCategoryParamsCopyWith<$Res> {
       String? description,
       int icon,
       bool isBudget,
-      bool isDefault,
-      bool isIncomeOrExpense,
       String name,
       CategoryType categoryType});
 }
@@ -71,8 +67,6 @@ class _$UpdateCategoryParamsCopyWithImpl<$Res,
     Object? description = freezed,
     Object? icon = null,
     Object? isBudget = null,
-    Object? isDefault = null,
-    Object? isIncomeOrExpense = null,
     Object? name = null,
     Object? categoryType = null,
   }) {
@@ -101,14 +95,6 @@ class _$UpdateCategoryParamsCopyWithImpl<$Res,
           ? _value.isBudget
           : isBudget // ignore: cast_nullable_to_non_nullable
               as bool,
-      isDefault: null == isDefault
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isIncomeOrExpense: null == isIncomeOrExpense
-          ? _value.isIncomeOrExpense
-          : isIncomeOrExpense // ignore: cast_nullable_to_non_nullable
-              as bool,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -136,8 +122,6 @@ abstract class _$$UpdateCategoryParamsImplCopyWith<$Res>
       String? description,
       int icon,
       bool isBudget,
-      bool isDefault,
-      bool isIncomeOrExpense,
       String name,
       CategoryType categoryType});
 }
@@ -159,8 +143,6 @@ class __$$UpdateCategoryParamsImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? icon = null,
     Object? isBudget = null,
-    Object? isDefault = null,
-    Object? isIncomeOrExpense = null,
     Object? name = null,
     Object? categoryType = null,
   }) {
@@ -189,14 +171,6 @@ class __$$UpdateCategoryParamsImplCopyWithImpl<$Res>
           ? _value.isBudget
           : isBudget // ignore: cast_nullable_to_non_nullable
               as bool,
-      isDefault: null == isDefault
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isIncomeOrExpense: null == isIncomeOrExpense
-          ? _value.isIncomeOrExpense
-          : isIncomeOrExpense // ignore: cast_nullable_to_non_nullable
-              as bool,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -219,10 +193,8 @@ class _$UpdateCategoryParamsImpl implements _UpdateCategoryParams {
       this.description,
       required this.icon,
       this.isBudget = false,
-      this.isDefault = false,
-      this.isIncomeOrExpense = false,
       required this.name,
-      this.categoryType = CategoryType.income});
+      required this.categoryType});
 
   @override
   final int key;
@@ -238,20 +210,13 @@ class _$UpdateCategoryParamsImpl implements _UpdateCategoryParams {
   @JsonKey()
   final bool isBudget;
   @override
-  @JsonKey()
-  final bool isDefault;
-  @override
-  @JsonKey()
-  final bool isIncomeOrExpense;
-  @override
   final String name;
   @override
-  @JsonKey()
   final CategoryType categoryType;
 
   @override
   String toString() {
-    return 'UpdateCategoryParams(key: $key, budget: $budget, color: $color, description: $description, icon: $icon, isBudget: $isBudget, isDefault: $isDefault, isIncomeOrExpense: $isIncomeOrExpense, name: $name, categoryType: $categoryType)';
+    return 'UpdateCategoryParams(key: $key, budget: $budget, color: $color, description: $description, icon: $icon, isBudget: $isBudget, name: $name, categoryType: $categoryType)';
   }
 
   @override
@@ -267,10 +232,6 @@ class _$UpdateCategoryParamsImpl implements _UpdateCategoryParams {
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.isBudget, isBudget) ||
                 other.isBudget == isBudget) &&
-            (identical(other.isDefault, isDefault) ||
-                other.isDefault == isDefault) &&
-            (identical(other.isIncomeOrExpense, isIncomeOrExpense) ||
-                other.isIncomeOrExpense == isIncomeOrExpense) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.categoryType, categoryType) ||
                 other.categoryType == categoryType));
@@ -278,7 +239,7 @@ class _$UpdateCategoryParamsImpl implements _UpdateCategoryParams {
 
   @override
   int get hashCode => Object.hash(runtimeType, key, budget, color, description,
-      icon, isBudget, isDefault, isIncomeOrExpense, name, categoryType);
+      icon, isBudget, name, categoryType);
 
   @JsonKey(ignore: true)
   @override
@@ -297,10 +258,8 @@ abstract class _UpdateCategoryParams implements UpdateCategoryParams {
       final String? description,
       required final int icon,
       final bool isBudget,
-      final bool isDefault,
-      final bool isIncomeOrExpense,
       required final String name,
-      final CategoryType categoryType}) = _$UpdateCategoryParamsImpl;
+      required final CategoryType categoryType}) = _$UpdateCategoryParamsImpl;
 
   @override
   int get key;
@@ -314,10 +273,6 @@ abstract class _UpdateCategoryParams implements UpdateCategoryParams {
   int get icon;
   @override
   bool get isBudget;
-  @override
-  bool get isDefault;
-  @override
-  bool get isIncomeOrExpense;
   @override
   String get name;
   @override

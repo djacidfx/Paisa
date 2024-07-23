@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:paisa/core/enum/category_type.dart';
 import 'package:paisa/core/widgets/paisa_scaffold.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
 import 'package:paisa/core/extensions/build_context_extension.dart';
 import 'package:paisa/core/extensions/color_extension.dart';
 import 'package:paisa/core/extensions/text_style_extension.dart';
@@ -24,10 +21,12 @@ class CategoryPage extends StatefulWidget {
     super.key,
     this.categoryId,
     this.categoryType = CategoryType.income,
+    this.isTransferCategoryType = false,
   });
 
   final int? categoryId;
-  final CategoryType? categoryType;
+  final CategoryType categoryType;
+  final bool isTransferCategoryType;
 
   @override
   State<CategoryPage> createState() => _CategoryPageState();
@@ -53,7 +52,7 @@ class _CategoryPageState extends State<CategoryPage> {
     super.initState();
     categoryBloc.add(FetchCategoryFromIdEvent(widget.categoryId));
     categoryBloc.add(
-      UpdateCategoryTypeEvent(widget.categoryType ?? CategoryType.income),
+      UpdateCategoryTypeEvent(widget.categoryType),
     );
   }
 
@@ -138,7 +137,6 @@ class _CategoryPageState extends State<CategoryPage> {
                       const CategoryIconPickerWidget(),
                       const CategoryColorWidget(),
                       SetBudgetWidget(controller: budgetController),
-                      const TransferCategoryWidget(),
                     ],
                   ),
                 ),
@@ -206,8 +204,6 @@ class _CategoryPageState extends State<CategoryPage> {
                           CategoryNameWidget(controller: categoryController),
                           const SizedBox(height: 16),
                           CategoryDescriptionWidget(controller: descController),
-                          const SizedBox(height: 16),
-                          const TransferCategoryWidget(),
                           const SizedBox(height: 16),
                         ],
                       ),
@@ -320,37 +316,6 @@ class CategoryColorWidget extends StatelessWidget {
   }
 }
 
-class TransferCategoryWidget extends StatefulWidget {
-  const TransferCategoryWidget({super.key});
-
-  @override
-  State<TransferCategoryWidget> createState() => _TransferCategoryWidgetState();
-}
-
-class _TransferCategoryWidgetState extends State<TransferCategoryWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<CategoryBloc, CategoryState>(
-      builder: (context, state) {
-        return SwitchListTile(
-          secondary: Icon(
-            MdiIcons.swapHorizontal,
-            color: context.secondary,
-          ),
-          subtitle: Text(context.loc.transferCategorySubtitle),
-          title: Text(context.loc.transferCategory),
-          value: context.read<CategoryBloc>().isDefault ?? false,
-          onChanged: (value) {
-            setState(() {
-              context.read<CategoryBloc>().isDefault = value;
-            });
-          },
-        );
-      },
-    );
-  }
-}
-
 class CategoryNameWidget extends StatelessWidget {
   const CategoryNameWidget({
     super.key,
@@ -402,6 +367,7 @@ class CategoryToggleButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CategoryBloc, CategoryState>(
+      buildWhen: (previous, current) => current is UpdateCategoryTypeState,
       builder: (context, state) {
         return PaisaToggleButtons<CategoryType>(
           filters: CategoryType.values,

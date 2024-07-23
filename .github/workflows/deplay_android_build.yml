@@ -34,17 +34,33 @@ jobs:
           cache: true
       - name: Get dependencies
         run: flutter pub get
-      - name: Build Android Dev Release APK
-        run: flutter build apk --flavor dev --no-tree-shake-icons
-      - name: Build Android Prod Release APK
-        run: flutter build apk --flavor prod --no-tree-shake-icons
+      - name: Build Android Dev Release APKs
+        run: flutter build apk --flavor dev --no-tree-shake-icons --split-per-abi
+      - name: Build Android Prod Release APKs
+        run: flutter build apk --flavor prod --no-tree-shake-icons --split-per-abi
       - name: Create Android release appbundle
         run: flutter build appbundle --flavor prod --no-tree-shake-icons
-      - name: Upload Android Release
+      - name: Rename and organize APKs
+        run: |
+          mkdir -p build/outputs/apk
+          mv build/app/outputs/flutter-apk/app-armeabi-v7a-dev-release.apk build/outputs/apk/app-armeabi-v7a-dev-release.apk
+          mv build/app/outputs/flutter-apk/app-arm64-v8a-dev-release.apk build/outputs/apk/app-arm64-v8a-dev-release.apk
+          mv build/app/outputs/flutter-apk/app-x86_64-dev-release.apk build/outputs/apk/app-x86_64-dev-release.apk
+          mv build/app/outputs/flutter-apk/app-armeabi-v7a-prod-release.apk build/outputs/apk/app-armeabi-v7a-prod-release.apk
+          mv build/app/outputs/flutter-apk/app-arm64-v8a-prod-release.apk build/outputs/apk/app-arm64-v8a-prod-release.apk
+          mv build/app/outputs/flutter-apk/app-x86_64-prod-release.apk build/outputs/apk/app-x86_64-prod-release.apk
+      - name: Upload Android APKs
         uses: actions/upload-artifact@v4
         with:
-          name: android-release
+          name: android-apks
+          path: build/outputs/apk/*.apk
+          if-no-files-found: error
+      - name: Upload Android App Bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-aab
           path: build/app/outputs/bundle/prodRelease/app-prod-release.aab
+          if-no-files-found: error
 
   build_ios:
     name: Create iOS Build
@@ -147,15 +163,17 @@ jobs:
       - name: Download Android APKs
         uses: actions/download-artifact@v4
         with:
-          name: android-release
+          name: android-apks
+          path: android-apks
       - name: Download iOS IPA
         uses: actions/download-artifact@v4
         with:
           name: ios-release
+          path: ios-release
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "*.apk,*.ipa"
+          artifacts: "android-apks/*.apk,ios-release/*.ipa"
           token: ${{ secrets.GITHUB_TOKEN }}
           generateReleaseNotes: true
           makeLatest: true

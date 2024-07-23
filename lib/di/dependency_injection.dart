@@ -110,17 +110,31 @@ void addDummyData() async {
     'Sports & Fitness'
   ];
 
-  for (int i = 0; i < names.length; i++) {
+  List<String> banks = [
+    'Global Trust Bank',
+    'Unity Financial',
+    /* 'Apex Bank',
+    'Mercury Savings & Loan',
+    'Crescent Credit Union',
+    'Orion Bank',
+    'Pinnacle Finance Group',
+    'Zenith Bank',
+    'Nova Bank',
+    'Infinity Banking Corp', */
+  ];
+
+  for (int i = 0; i < banks.length; i++) {
     await accountDataSource.add(
       AccountModel(
-        bankName: 'Bank Name $i',
+        bankName: banks[i],
         name: 'Holder name $i',
         cardType: AccountType.values[Random().nextInt(3)],
         color:
             Colors.primaries[Random().nextInt(Colors.primaries.length)].value,
       ),
     );
-
+  }
+  for (int i = 0; i < names.length; i++) {
     await categoryDataSource.add(
       CategoryModel(
         name: names[i],
@@ -165,12 +179,12 @@ void addDummyData() async {
     );
   }
 
-  for (int i = 0; i < 1000; i++) {
+  for (int i = 0; i < 0; i++) {
     final TransactionType type = [
       TransactionType.expense,
       TransactionType.income,
     ][Random().nextInt(2)];
-    int accountId = Random().nextInt(10);
+    int accountId = Random().nextInt(banks.length);
     final result = categoryDataSource.categories().where((element) {
       if (type == TransactionType.income) {
         return element.categoryType == CategoryType.income;

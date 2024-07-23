@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:paisa/config/routes.dart';
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/widgets/paisa_widget.dart';
 import 'package:paisa/features/category/domain/entities/category.dart';
@@ -9,21 +7,20 @@ class CategoryItemTabletWidget extends StatelessWidget {
   const CategoryItemTabletWidget({
     super.key,
     required this.category,
-    required this.onPressed,
+    required this.onLongPress,
+    required this.onTap,
   });
 
   final CategoryEntity category;
-  final VoidCallback onPressed;
+  final Function(String categoryName, int categoryId) onLongPress;
+  final Function(int categoryId) onTap;
 
   @override
   Widget build(BuildContext context) {
     return PaisaFilledCard(
       child: InkWell(
-        onTap: () {
-          CategoryPageData(
-            categoryId: category.superId,
-          ).push(context);
-        },
+        onLongPress: () => onLongPress(category.name, category.superId!),
+        onTap: () => onTap(category.superId!),
         child: Row(
           children: [
             Padding(

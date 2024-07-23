@@ -16,8 +16,8 @@ import 'package:paisa/main.dart';
 
 final GlobalKey<FormState> _form = GlobalKey<FormState>();
 
-class AccountPage extends StatefulWidget {
-  const AccountPage({
+class AddAccountPage extends StatefulWidget {
+  const AddAccountPage({
     super.key,
     this.accountId,
   });
@@ -25,10 +25,10 @@ class AccountPage extends StatefulWidget {
   final int? accountId;
 
   @override
-  AccountPageState createState() => AccountPageState();
+  AddAccountPageState createState() => AddAccountPageState();
 }
 
-class AccountPageState extends State<AccountPage> {
+class AddAccountPageState extends State<AddAccountPage> {
   final TextEditingController accountHolderController = TextEditingController();
   final TextEditingController accountInitialAmountController =
       TextEditingController();
@@ -167,47 +167,37 @@ class AccountPageState extends State<AccountPage> {
                   ],
                 ),
                 body: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 8,
-                        ),
-                        child: AccountToggleButtons(),
-                      ),
-                      Form(
-                        key: _form,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              const SizedBox(height: 16),
-                              AccountCardHolderNameWidget(
-                                controller: accountHolderController,
-                              ),
-                              const SizedBox(height: 16),
-                              AccountNameWidget(
-                                controller: accountNameController,
-                              ),
-                              const SizedBox(height: 16),
-                              AccountInitialAmountWidget(
-                                controller: accountInitialAmountController,
-                              ),
-                              const SizedBox(height: 16),
-                              const AccountColorPickerWidget(),
-                              AccountDefaultSwitchWidget(
-                                accountId: widget.accountId ?? -1,
-                              ),
-                              AccountExcludedSwitchWidget(
-                                accountId: widget.accountId ?? -1,
-                              ),
-                            ],
+                  child: Form(
+                    key: _form,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          const AccountToggleButtons(),
+                          const SizedBox(height: 16),
+                          AccountCardHolderNameWidget(
+                            controller: accountHolderController,
                           ),
-                        ),
+                          const SizedBox(height: 16),
+                          AccountNameWidget(
+                            controller: accountNameController,
+                          ),
+                          const SizedBox(height: 16),
+                          AccountInitialAmountWidget(
+                            controller: accountInitialAmountController,
+                          ),
+                          const SizedBox(height: 16),
+                          const AccountColorPickerWidget(),
+                          AccountDefaultSwitchWidget(
+                            accountId: widget.accountId ?? -1,
+                          ),
+                          AccountExcludedSwitchWidget(
+                            accountId: widget.accountId ?? -1,
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
                 bottomNavigationBar: SafeArea(

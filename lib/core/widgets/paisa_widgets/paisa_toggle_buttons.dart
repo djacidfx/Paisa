@@ -18,24 +18,21 @@ class PaisaToggleButtons<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: SizedBox(
-        height: 56,
-        child: ListView.separated(
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          separatorBuilder: (context, index) => const SizedBox(width: 6),
-          itemCount: filters.length,
-          itemBuilder: (context, index) {
-            final T filter = filters[index];
-            return PaisaPillChip(
-              title: title(filter),
-              isSelected: isSelected(filter),
-              onPressed: () => onFilterSelected(filter),
-            );
-          },
-        ),
+    return SizedBox(
+      height: 56,
+      child: ListView.separated(
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        separatorBuilder: (context, index) => const SizedBox(width: 6),
+        itemCount: filters.length,
+        itemBuilder: (context, index) {
+          final T filter = filters[index];
+          return PaisaPillChip(
+            title: title(filter),
+            isSelected: isSelected(filter),
+            onPressed: () => onFilterSelected(filter),
+          );
+        },
       ),
     );
   }

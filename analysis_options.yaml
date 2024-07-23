@@ -33,7 +33,7 @@ linter:
     - prefer_const_constructors_in_immutables
     - prefer_final_fields
     - always_declare_return_types
-    - always_declare_return_types
+    - avoid_relative_lib_imports
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

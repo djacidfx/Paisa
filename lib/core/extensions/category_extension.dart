@@ -8,9 +8,9 @@ import 'package:paisa/features/category/data/model/category_model.dart';
 import 'package:paisa/features/category/domain/entities/category.dart';
 
 extension BoxCategoryModelHelper on Box<CategoryModel> {
-  List<CategoryEntity> get filterDefault {
+  List<CategoryEntity> filterType(CategoryType categoryType) {
     return values
-        .where((element) => !element.isTransferCategory)
+        .where((element) => element.categoryType == categoryType)
         .sort()
         .toEntities();
   }
@@ -26,7 +26,6 @@ extension CategoryModelHelper on CategoryModel {
       description: description,
       isBudget: isBudget,
       superId: superId,
-      isDefault: isTransferCategory,
       categoryType: categoryType ?? CategoryType.income,
     );
   }
@@ -40,11 +39,8 @@ extension CategoryModelsHelper on Iterable<CategoryModel> {
   List<CategoryModel> sort() => sorted((a, b) => a.name.compareTo(b.name));
 
   List<CategoryModel> get filterDefault {
-    return where((element) => !element.isTransferCategory).sort();
-  }
-
-  Iterable<CategoryModel> get transferCategory {
-    return sort().where((element) => element.isTransferCategory);
+    return where((element) => element.categoryType != CategoryType.transfer)
+        .sort();
   }
 
   List<CategoryEntity> toEntities() =>

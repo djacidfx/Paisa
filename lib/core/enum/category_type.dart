@@ -9,7 +9,9 @@ enum CategoryType {
   @HiveField(0)
   income,
   @HiveField(1)
-  expense
+  expense,
+  @HiveField(2)
+  transfer
 }
 
 extension CategoryTypeExtension on CategoryType {
@@ -19,6 +21,8 @@ extension CategoryTypeExtension on CategoryType {
         return context.loc.income;
       case CategoryType.expense:
         return context.loc.expense;
+      case CategoryType.transfer:
+        return context.loc.transfer;
     }
   }
 }

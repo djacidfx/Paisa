@@ -32,13 +32,9 @@ mixin _$CategoryModel {
   int get icon => throw _privateConstructorUsedError;
   @HiveField(2)
   set icon(int value) => throw _privateConstructorUsedError;
-  @HiveField(3, defaultValue: false)
-  bool get isTransferCategory => throw _privateConstructorUsedError;
-  @HiveField(3, defaultValue: false)
-  set isTransferCategory(bool value) => throw _privateConstructorUsedError;
-  @HiveField(4, defaultValue: 0)
+  @HiveField(4)
   int? get superId => throw _privateConstructorUsedError;
-  @HiveField(4, defaultValue: 0)
+  @HiveField(4)
   set superId(int? value) => throw _privateConstructorUsedError;
   @HiveField(6, defaultValue: 0)
   double? get budget => throw _privateConstructorUsedError;
@@ -73,8 +69,7 @@ abstract class $CategoryModelCopyWith<$Res> {
       {@HiveField(0) String name,
       @HiveField(1) String? description,
       @HiveField(2) int icon,
-      @HiveField(3, defaultValue: false) bool isTransferCategory,
-      @HiveField(4, defaultValue: 0) int? superId,
+      @HiveField(4) int? superId,
       @HiveField(6, defaultValue: 0) double? budget,
       @HiveField(7, defaultValue: false) bool isBudget,
       @HiveField(8, defaultValue: 0xFFFFC107) int? color,
@@ -97,7 +92,6 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
     Object? name = null,
     Object? description = freezed,
     Object? icon = null,
-    Object? isTransferCategory = null,
     Object? superId = freezed,
     Object? budget = freezed,
     Object? isBudget = null,
@@ -117,10 +111,6 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as int,
-      isTransferCategory: null == isTransferCategory
-          ? _value.isTransferCategory
-          : isTransferCategory // ignore: cast_nullable_to_non_nullable
-              as bool,
       superId: freezed == superId
           ? _value.superId
           : superId // ignore: cast_nullable_to_non_nullable
@@ -157,8 +147,7 @@ abstract class _$$CategoryModelImplCopyWith<$Res>
       {@HiveField(0) String name,
       @HiveField(1) String? description,
       @HiveField(2) int icon,
-      @HiveField(3, defaultValue: false) bool isTransferCategory,
-      @HiveField(4, defaultValue: 0) int? superId,
+      @HiveField(4) int? superId,
       @HiveField(6, defaultValue: 0) double? budget,
       @HiveField(7, defaultValue: false) bool isBudget,
       @HiveField(8, defaultValue: 0xFFFFC107) int? color,
@@ -179,7 +168,6 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
     Object? name = null,
     Object? description = freezed,
     Object? icon = null,
-    Object? isTransferCategory = null,
     Object? superId = freezed,
     Object? budget = freezed,
     Object? isBudget = null,
@@ -199,10 +187,6 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as int,
-      isTransferCategory: null == isTransferCategory
-          ? _value.isTransferCategory
-          : isTransferCategory // ignore: cast_nullable_to_non_nullable
-              as bool,
       superId: freezed == superId
           ? _value.superId
           : superId // ignore: cast_nullable_to_non_nullable
@@ -235,8 +219,7 @@ class _$CategoryModelImpl extends _CategoryModel {
       {@HiveField(0) required this.name,
       @HiveField(1) this.description,
       @HiveField(2) required this.icon,
-      @HiveField(3, defaultValue: false) this.isTransferCategory = false,
-      @HiveField(4, defaultValue: 0) this.superId,
+      @HiveField(4) this.superId,
       @HiveField(6, defaultValue: 0) this.budget,
       @HiveField(7, defaultValue: false) this.isBudget = false,
       @HiveField(8, defaultValue: 0xFFFFC107) this.color,
@@ -256,11 +239,7 @@ class _$CategoryModelImpl extends _CategoryModel {
   @HiveField(2)
   int icon;
   @override
-  @JsonKey()
-  @HiveField(3, defaultValue: false)
-  bool isTransferCategory;
-  @override
-  @HiveField(4, defaultValue: 0)
+  @HiveField(4)
   int? superId;
   @override
   @HiveField(6, defaultValue: 0)
@@ -279,7 +258,7 @@ class _$CategoryModelImpl extends _CategoryModel {
 
   @override
   String toString() {
-    return 'CategoryModel(name: $name, description: $description, icon: $icon, isTransferCategory: $isTransferCategory, superId: $superId, budget: $budget, isBudget: $isBudget, color: $color, categoryType: $categoryType)';
+    return 'CategoryModel(name: $name, description: $description, icon: $icon, superId: $superId, budget: $budget, isBudget: $isBudget, color: $color, categoryType: $categoryType)';
   }
 
   @JsonKey(ignore: true)
@@ -301,8 +280,7 @@ abstract class _CategoryModel extends CategoryModel {
       {@HiveField(0) required String name,
       @HiveField(1) String? description,
       @HiveField(2) required int icon,
-      @HiveField(3, defaultValue: false) bool isTransferCategory,
-      @HiveField(4, defaultValue: 0) int? superId,
+      @HiveField(4) int? superId,
       @HiveField(6, defaultValue: 0) double? budget,
       @HiveField(7, defaultValue: false) bool isBudget,
       @HiveField(8, defaultValue: 0xFFFFC107) int? color,
@@ -328,14 +306,9 @@ abstract class _CategoryModel extends CategoryModel {
   @HiveField(2)
   set icon(int value);
   @override
-  @HiveField(3, defaultValue: false)
-  bool get isTransferCategory;
-  @HiveField(3, defaultValue: false)
-  set isTransferCategory(bool value);
-  @override
-  @HiveField(4, defaultValue: 0)
+  @HiveField(4)
   int? get superId;
-  @HiveField(4, defaultValue: 0)
+  @HiveField(4)
   set superId(int? value);
   @override
   @HiveField(6, defaultValue: 0)

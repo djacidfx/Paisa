@@ -22,7 +22,6 @@ class AddCategoryUseCase implements UseCase<void, AddCategoryParams> {
       budget: params.budget,
       isBudget: params.isBudget,
       color: params.color,
-      isDefault: params.isDefault,
       categoryType: params.categoryType,
     );
   }
@@ -37,7 +36,6 @@ class AddCategoryParams with _$AddCategoryParams {
     String? description,
     required int icon,
     @Default(false) bool isBudget,
-    @Default(false) bool isDefault,
-    @Default(CategoryType.income) CategoryType categoryType,
+    required CategoryType categoryType,
   }) = _AddCategoryParams;
 }

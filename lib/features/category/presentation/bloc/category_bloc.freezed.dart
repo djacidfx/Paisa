@@ -18,68 +18,68 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CategoryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(bool isAddOrUpdate) addOrUpdate,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(int categoryId) delete,
+    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(int categoryIcon) iconSelected,
     required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(CategoryType categoryType) updateType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(int categoryId)? delete,
+    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(int categoryIcon)? iconSelected,
     TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(CategoryType categoryType)? updateType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function(int categoryId)? delete,
+    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(int categoryIcon)? iconSelected,
     TResult Function(bool isBudget)? updateBudget,
-    TResult Function(int categoryColor)? colorSelected,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
+    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(CategoryDeleteEvent value) delete,
+    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(CategoryIconSelectedEvent value) iconSelected,
     required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
-    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(UpdateCategoryTypeEvent value) updateType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(CategoryDeleteEvent value)? delete,
+    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(UpdateCategoryTypeEvent value)? updateType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(CategoryDeleteEvent value)? delete,
+    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(UpdateCategoryTypeEvent value)? updateType,
     required TResult orElse(),
   }) =>
@@ -102,174 +102,6 @@ class _$CategoryEventCopyWithImpl<$Res, $Val extends CategoryEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$FetchCategoryFromIdEventImplCopyWith<$Res> {
-  factory _$$FetchCategoryFromIdEventImplCopyWith(
-          _$FetchCategoryFromIdEventImpl value,
-          $Res Function(_$FetchCategoryFromIdEventImpl) then) =
-      __$$FetchCategoryFromIdEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int? categoryId});
-}
-
-/// @nodoc
-class __$$FetchCategoryFromIdEventImplCopyWithImpl<$Res>
-    extends _$CategoryEventCopyWithImpl<$Res, _$FetchCategoryFromIdEventImpl>
-    implements _$$FetchCategoryFromIdEventImplCopyWith<$Res> {
-  __$$FetchCategoryFromIdEventImplCopyWithImpl(
-      _$FetchCategoryFromIdEventImpl _value,
-      $Res Function(_$FetchCategoryFromIdEventImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? categoryId = freezed,
-  }) {
-    return _then(_$FetchCategoryFromIdEventImpl(
-      freezed == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FetchCategoryFromIdEventImpl implements FetchCategoryFromIdEvent {
-  const _$FetchCategoryFromIdEventImpl(this.categoryId);
-
-  @override
-  final int? categoryId;
-
-  @override
-  String toString() {
-    return 'CategoryEvent.fetchFromId(categoryId: $categoryId)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FetchCategoryFromIdEventImpl &&
-            (identical(other.categoryId, categoryId) ||
-                other.categoryId == categoryId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, categoryId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FetchCategoryFromIdEventImplCopyWith<_$FetchCategoryFromIdEventImpl>
-      get copyWith => __$$FetchCategoryFromIdEventImplCopyWithImpl<
-          _$FetchCategoryFromIdEventImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(int? categoryId) fetchFromId,
-    required TResult Function(bool isAddOrUpdate) addOrUpdate,
-    required TResult Function(int categoryId) delete,
-    required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(int categoryColor) colorSelected,
-    required TResult Function(CategoryType categoryType) updateType,
-  }) {
-    return fetchFromId(categoryId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? categoryId)? fetchFromId,
-    TResult? Function(bool isAddOrUpdate)? addOrUpdate,
-    TResult? Function(int categoryId)? delete,
-    TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(int categoryColor)? colorSelected,
-    TResult? Function(CategoryType categoryType)? updateType,
-  }) {
-    return fetchFromId?.call(categoryId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? categoryId)? fetchFromId,
-    TResult Function(bool isAddOrUpdate)? addOrUpdate,
-    TResult Function(int categoryId)? delete,
-    TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(bool isBudget)? updateBudget,
-    TResult Function(int categoryColor)? colorSelected,
-    TResult Function(CategoryType categoryType)? updateType,
-    required TResult orElse(),
-  }) {
-    if (fetchFromId != null) {
-      return fetchFromId(categoryId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
-    required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
-    required TResult Function(CategoryDeleteEvent value) delete,
-    required TResult Function(CategoryIconSelectedEvent value) iconSelected,
-    required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
-    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
-    required TResult Function(UpdateCategoryTypeEvent value) updateType,
-  }) {
-    return fetchFromId(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
-    TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
-    TResult? Function(CategoryDeleteEvent value)? delete,
-    TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
-    TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
-    TResult? Function(UpdateCategoryTypeEvent value)? updateType,
-  }) {
-    return fetchFromId?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
-    TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
-    TResult Function(CategoryDeleteEvent value)? delete,
-    TResult Function(CategoryIconSelectedEvent value)? iconSelected,
-    TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
-    TResult Function(UpdateCategoryTypeEvent value)? updateType,
-    required TResult orElse(),
-  }) {
-    if (fetchFromId != null) {
-      return fetchFromId(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class FetchCategoryFromIdEvent implements CategoryEvent {
-  const factory FetchCategoryFromIdEvent(final int? categoryId) =
-      _$FetchCategoryFromIdEventImpl;
-
-  int? get categoryId;
-  @JsonKey(ignore: true)
-  _$$FetchCategoryFromIdEventImplCopyWith<_$FetchCategoryFromIdEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -340,12 +172,12 @@ class _$AddOrUpdateCategoryEventImpl implements AddOrUpdateCategoryEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(bool isAddOrUpdate) addOrUpdate,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(int categoryId) delete,
+    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(int categoryIcon) iconSelected,
     required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(CategoryType categoryType) updateType,
   }) {
     return addOrUpdate(isAddOrUpdate);
@@ -354,12 +186,12 @@ class _$AddOrUpdateCategoryEventImpl implements AddOrUpdateCategoryEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(int categoryId)? delete,
+    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(int categoryIcon)? iconSelected,
     TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(CategoryType categoryType)? updateType,
   }) {
     return addOrUpdate?.call(isAddOrUpdate);
@@ -368,12 +200,12 @@ class _$AddOrUpdateCategoryEventImpl implements AddOrUpdateCategoryEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function(int categoryId)? delete,
+    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(int categoryIcon)? iconSelected,
     TResult Function(bool isBudget)? updateBudget,
-    TResult Function(int categoryColor)? colorSelected,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
   }) {
@@ -386,12 +218,12 @@ class _$AddOrUpdateCategoryEventImpl implements AddOrUpdateCategoryEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
+    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(CategoryDeleteEvent value) delete,
+    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(CategoryIconSelectedEvent value) iconSelected,
     required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
-    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(UpdateCategoryTypeEvent value) updateType,
   }) {
     return addOrUpdate(this);
@@ -400,12 +232,12 @@ class _$AddOrUpdateCategoryEventImpl implements AddOrUpdateCategoryEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(CategoryDeleteEvent value)? delete,
+    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(UpdateCategoryTypeEvent value)? updateType,
   }) {
     return addOrUpdate?.call(this);
@@ -414,12 +246,12 @@ class _$AddOrUpdateCategoryEventImpl implements AddOrUpdateCategoryEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(CategoryDeleteEvent value)? delete,
+    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(UpdateCategoryTypeEvent value)? updateType,
     required TResult orElse(),
   }) {
@@ -437,6 +269,174 @@ abstract class AddOrUpdateCategoryEvent implements CategoryEvent {
   bool get isAddOrUpdate;
   @JsonKey(ignore: true)
   _$$AddOrUpdateCategoryEventImplCopyWith<_$AddOrUpdateCategoryEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CategoryColorSelectedEventImplCopyWith<$Res> {
+  factory _$$CategoryColorSelectedEventImplCopyWith(
+          _$CategoryColorSelectedEventImpl value,
+          $Res Function(_$CategoryColorSelectedEventImpl) then) =
+      __$$CategoryColorSelectedEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int categoryColor});
+}
+
+/// @nodoc
+class __$$CategoryColorSelectedEventImplCopyWithImpl<$Res>
+    extends _$CategoryEventCopyWithImpl<$Res, _$CategoryColorSelectedEventImpl>
+    implements _$$CategoryColorSelectedEventImplCopyWith<$Res> {
+  __$$CategoryColorSelectedEventImplCopyWithImpl(
+      _$CategoryColorSelectedEventImpl _value,
+      $Res Function(_$CategoryColorSelectedEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? categoryColor = null,
+  }) {
+    return _then(_$CategoryColorSelectedEventImpl(
+      null == categoryColor
+          ? _value.categoryColor
+          : categoryColor // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CategoryColorSelectedEventImpl implements CategoryColorSelectedEvent {
+  const _$CategoryColorSelectedEventImpl(this.categoryColor);
+
+  @override
+  final int categoryColor;
+
+  @override
+  String toString() {
+    return 'CategoryEvent.colorSelected(categoryColor: $categoryColor)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CategoryColorSelectedEventImpl &&
+            (identical(other.categoryColor, categoryColor) ||
+                other.categoryColor == categoryColor));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, categoryColor);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CategoryColorSelectedEventImplCopyWith<_$CategoryColorSelectedEventImpl>
+      get copyWith => __$$CategoryColorSelectedEventImplCopyWithImpl<
+          _$CategoryColorSelectedEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isAddOrUpdate) addOrUpdate,
+    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function(int categoryId) delete,
+    required TResult Function(int? categoryId) fetchFromId,
+    required TResult Function(int categoryIcon) iconSelected,
+    required TResult Function(bool isBudget) updateBudget,
+    required TResult Function(CategoryType categoryType) updateType,
+  }) {
+    return colorSelected(categoryColor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function(int categoryId)? delete,
+    TResult? Function(int? categoryId)? fetchFromId,
+    TResult? Function(int categoryIcon)? iconSelected,
+    TResult? Function(bool isBudget)? updateBudget,
+    TResult? Function(CategoryType categoryType)? updateType,
+  }) {
+    return colorSelected?.call(categoryColor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult Function(int categoryColor)? colorSelected,
+    TResult Function(int categoryId)? delete,
+    TResult Function(int? categoryId)? fetchFromId,
+    TResult Function(int categoryIcon)? iconSelected,
+    TResult Function(bool isBudget)? updateBudget,
+    TResult Function(CategoryType categoryType)? updateType,
+    required TResult orElse(),
+  }) {
+    if (colorSelected != null) {
+      return colorSelected(categoryColor);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
+    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
+    required TResult Function(CategoryDeleteEvent value) delete,
+    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
+    required TResult Function(CategoryIconSelectedEvent value) iconSelected,
+    required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
+    required TResult Function(UpdateCategoryTypeEvent value) updateType,
+  }) {
+    return colorSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
+    TResult? Function(CategoryDeleteEvent value)? delete,
+    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
+    TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
+    TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
+    TResult? Function(UpdateCategoryTypeEvent value)? updateType,
+  }) {
+    return colorSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
+    TResult Function(CategoryDeleteEvent value)? delete,
+    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
+    TResult Function(CategoryIconSelectedEvent value)? iconSelected,
+    TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
+    TResult Function(UpdateCategoryTypeEvent value)? updateType,
+    required TResult orElse(),
+  }) {
+    if (colorSelected != null) {
+      return colorSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CategoryColorSelectedEvent implements CategoryEvent {
+  const factory CategoryColorSelectedEvent(final int categoryColor) =
+      _$CategoryColorSelectedEventImpl;
+
+  int get categoryColor;
+  @JsonKey(ignore: true)
+  _$$CategoryColorSelectedEventImplCopyWith<_$CategoryColorSelectedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -506,12 +506,12 @@ class _$CategoryDeleteEventImpl implements CategoryDeleteEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(bool isAddOrUpdate) addOrUpdate,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(int categoryId) delete,
+    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(int categoryIcon) iconSelected,
     required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(CategoryType categoryType) updateType,
   }) {
     return delete(categoryId);
@@ -520,12 +520,12 @@ class _$CategoryDeleteEventImpl implements CategoryDeleteEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(int categoryId)? delete,
+    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(int categoryIcon)? iconSelected,
     TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(CategoryType categoryType)? updateType,
   }) {
     return delete?.call(categoryId);
@@ -534,12 +534,12 @@ class _$CategoryDeleteEventImpl implements CategoryDeleteEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function(int categoryId)? delete,
+    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(int categoryIcon)? iconSelected,
     TResult Function(bool isBudget)? updateBudget,
-    TResult Function(int categoryColor)? colorSelected,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
   }) {
@@ -552,12 +552,12 @@ class _$CategoryDeleteEventImpl implements CategoryDeleteEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
+    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(CategoryDeleteEvent value) delete,
+    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(CategoryIconSelectedEvent value) iconSelected,
     required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
-    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(UpdateCategoryTypeEvent value) updateType,
   }) {
     return delete(this);
@@ -566,12 +566,12 @@ class _$CategoryDeleteEventImpl implements CategoryDeleteEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(CategoryDeleteEvent value)? delete,
+    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(UpdateCategoryTypeEvent value)? updateType,
   }) {
     return delete?.call(this);
@@ -580,12 +580,12 @@ class _$CategoryDeleteEventImpl implements CategoryDeleteEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(CategoryDeleteEvent value)? delete,
+    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(UpdateCategoryTypeEvent value)? updateType,
     required TResult orElse(),
   }) {
@@ -604,6 +604,174 @@ abstract class CategoryDeleteEvent implements CategoryEvent {
   @JsonKey(ignore: true)
   _$$CategoryDeleteEventImplCopyWith<_$CategoryDeleteEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FetchCategoryFromIdEventImplCopyWith<$Res> {
+  factory _$$FetchCategoryFromIdEventImplCopyWith(
+          _$FetchCategoryFromIdEventImpl value,
+          $Res Function(_$FetchCategoryFromIdEventImpl) then) =
+      __$$FetchCategoryFromIdEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int? categoryId});
+}
+
+/// @nodoc
+class __$$FetchCategoryFromIdEventImplCopyWithImpl<$Res>
+    extends _$CategoryEventCopyWithImpl<$Res, _$FetchCategoryFromIdEventImpl>
+    implements _$$FetchCategoryFromIdEventImplCopyWith<$Res> {
+  __$$FetchCategoryFromIdEventImplCopyWithImpl(
+      _$FetchCategoryFromIdEventImpl _value,
+      $Res Function(_$FetchCategoryFromIdEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? categoryId = freezed,
+  }) {
+    return _then(_$FetchCategoryFromIdEventImpl(
+      freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FetchCategoryFromIdEventImpl implements FetchCategoryFromIdEvent {
+  const _$FetchCategoryFromIdEventImpl(this.categoryId);
+
+  @override
+  final int? categoryId;
+
+  @override
+  String toString() {
+    return 'CategoryEvent.fetchFromId(categoryId: $categoryId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FetchCategoryFromIdEventImpl &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, categoryId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchCategoryFromIdEventImplCopyWith<_$FetchCategoryFromIdEventImpl>
+      get copyWith => __$$FetchCategoryFromIdEventImplCopyWithImpl<
+          _$FetchCategoryFromIdEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isAddOrUpdate) addOrUpdate,
+    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function(int categoryId) delete,
+    required TResult Function(int? categoryId) fetchFromId,
+    required TResult Function(int categoryIcon) iconSelected,
+    required TResult Function(bool isBudget) updateBudget,
+    required TResult Function(CategoryType categoryType) updateType,
+  }) {
+    return fetchFromId(categoryId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function(int categoryId)? delete,
+    TResult? Function(int? categoryId)? fetchFromId,
+    TResult? Function(int categoryIcon)? iconSelected,
+    TResult? Function(bool isBudget)? updateBudget,
+    TResult? Function(CategoryType categoryType)? updateType,
+  }) {
+    return fetchFromId?.call(categoryId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult Function(int categoryColor)? colorSelected,
+    TResult Function(int categoryId)? delete,
+    TResult Function(int? categoryId)? fetchFromId,
+    TResult Function(int categoryIcon)? iconSelected,
+    TResult Function(bool isBudget)? updateBudget,
+    TResult Function(CategoryType categoryType)? updateType,
+    required TResult orElse(),
+  }) {
+    if (fetchFromId != null) {
+      return fetchFromId(categoryId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
+    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
+    required TResult Function(CategoryDeleteEvent value) delete,
+    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
+    required TResult Function(CategoryIconSelectedEvent value) iconSelected,
+    required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
+    required TResult Function(UpdateCategoryTypeEvent value) updateType,
+  }) {
+    return fetchFromId(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
+    TResult? Function(CategoryDeleteEvent value)? delete,
+    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
+    TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
+    TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
+    TResult? Function(UpdateCategoryTypeEvent value)? updateType,
+  }) {
+    return fetchFromId?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
+    TResult Function(CategoryDeleteEvent value)? delete,
+    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
+    TResult Function(CategoryIconSelectedEvent value)? iconSelected,
+    TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
+    TResult Function(UpdateCategoryTypeEvent value)? updateType,
+    required TResult orElse(),
+  }) {
+    if (fetchFromId != null) {
+      return fetchFromId(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FetchCategoryFromIdEvent implements CategoryEvent {
+  const factory FetchCategoryFromIdEvent(final int? categoryId) =
+      _$FetchCategoryFromIdEventImpl;
+
+  int? get categoryId;
+  @JsonKey(ignore: true)
+  _$$FetchCategoryFromIdEventImplCopyWith<_$FetchCategoryFromIdEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -674,12 +842,12 @@ class _$CategoryIconSelectedEventImpl implements CategoryIconSelectedEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(bool isAddOrUpdate) addOrUpdate,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(int categoryId) delete,
+    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(int categoryIcon) iconSelected,
     required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(CategoryType categoryType) updateType,
   }) {
     return iconSelected(categoryIcon);
@@ -688,12 +856,12 @@ class _$CategoryIconSelectedEventImpl implements CategoryIconSelectedEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(int categoryId)? delete,
+    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(int categoryIcon)? iconSelected,
     TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(CategoryType categoryType)? updateType,
   }) {
     return iconSelected?.call(categoryIcon);
@@ -702,12 +870,12 @@ class _$CategoryIconSelectedEventImpl implements CategoryIconSelectedEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function(int categoryId)? delete,
+    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(int categoryIcon)? iconSelected,
     TResult Function(bool isBudget)? updateBudget,
-    TResult Function(int categoryColor)? colorSelected,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
   }) {
@@ -720,12 +888,12 @@ class _$CategoryIconSelectedEventImpl implements CategoryIconSelectedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
+    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(CategoryDeleteEvent value) delete,
+    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(CategoryIconSelectedEvent value) iconSelected,
     required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
-    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(UpdateCategoryTypeEvent value) updateType,
   }) {
     return iconSelected(this);
@@ -734,12 +902,12 @@ class _$CategoryIconSelectedEventImpl implements CategoryIconSelectedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(CategoryDeleteEvent value)? delete,
+    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(UpdateCategoryTypeEvent value)? updateType,
   }) {
     return iconSelected?.call(this);
@@ -748,12 +916,12 @@ class _$CategoryIconSelectedEventImpl implements CategoryIconSelectedEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(CategoryDeleteEvent value)? delete,
+    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(UpdateCategoryTypeEvent value)? updateType,
     required TResult orElse(),
   }) {
@@ -842,12 +1010,12 @@ class _$UpdateCategoryBudgetEventImpl implements UpdateCategoryBudgetEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(bool isAddOrUpdate) addOrUpdate,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(int categoryId) delete,
+    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(int categoryIcon) iconSelected,
     required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(CategoryType categoryType) updateType,
   }) {
     return updateBudget(isBudget);
@@ -856,12 +1024,12 @@ class _$UpdateCategoryBudgetEventImpl implements UpdateCategoryBudgetEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(int categoryId)? delete,
+    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(int categoryIcon)? iconSelected,
     TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(CategoryType categoryType)? updateType,
   }) {
     return updateBudget?.call(isBudget);
@@ -870,12 +1038,12 @@ class _$UpdateCategoryBudgetEventImpl implements UpdateCategoryBudgetEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function(int categoryId)? delete,
+    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(int categoryIcon)? iconSelected,
     TResult Function(bool isBudget)? updateBudget,
-    TResult Function(int categoryColor)? colorSelected,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
   }) {
@@ -888,12 +1056,12 @@ class _$UpdateCategoryBudgetEventImpl implements UpdateCategoryBudgetEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
+    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(CategoryDeleteEvent value) delete,
+    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(CategoryIconSelectedEvent value) iconSelected,
     required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
-    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(UpdateCategoryTypeEvent value) updateType,
   }) {
     return updateBudget(this);
@@ -902,12 +1070,12 @@ class _$UpdateCategoryBudgetEventImpl implements UpdateCategoryBudgetEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(CategoryDeleteEvent value)? delete,
+    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(UpdateCategoryTypeEvent value)? updateType,
   }) {
     return updateBudget?.call(this);
@@ -916,12 +1084,12 @@ class _$UpdateCategoryBudgetEventImpl implements UpdateCategoryBudgetEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(CategoryDeleteEvent value)? delete,
+    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(UpdateCategoryTypeEvent value)? updateType,
     required TResult orElse(),
   }) {
@@ -939,174 +1107,6 @@ abstract class UpdateCategoryBudgetEvent implements CategoryEvent {
   bool get isBudget;
   @JsonKey(ignore: true)
   _$$UpdateCategoryBudgetEventImplCopyWith<_$UpdateCategoryBudgetEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CategoryColorSelectedEventImplCopyWith<$Res> {
-  factory _$$CategoryColorSelectedEventImplCopyWith(
-          _$CategoryColorSelectedEventImpl value,
-          $Res Function(_$CategoryColorSelectedEventImpl) then) =
-      __$$CategoryColorSelectedEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int categoryColor});
-}
-
-/// @nodoc
-class __$$CategoryColorSelectedEventImplCopyWithImpl<$Res>
-    extends _$CategoryEventCopyWithImpl<$Res, _$CategoryColorSelectedEventImpl>
-    implements _$$CategoryColorSelectedEventImplCopyWith<$Res> {
-  __$$CategoryColorSelectedEventImplCopyWithImpl(
-      _$CategoryColorSelectedEventImpl _value,
-      $Res Function(_$CategoryColorSelectedEventImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? categoryColor = null,
-  }) {
-    return _then(_$CategoryColorSelectedEventImpl(
-      null == categoryColor
-          ? _value.categoryColor
-          : categoryColor // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CategoryColorSelectedEventImpl implements CategoryColorSelectedEvent {
-  const _$CategoryColorSelectedEventImpl(this.categoryColor);
-
-  @override
-  final int categoryColor;
-
-  @override
-  String toString() {
-    return 'CategoryEvent.colorSelected(categoryColor: $categoryColor)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CategoryColorSelectedEventImpl &&
-            (identical(other.categoryColor, categoryColor) ||
-                other.categoryColor == categoryColor));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, categoryColor);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CategoryColorSelectedEventImplCopyWith<_$CategoryColorSelectedEventImpl>
-      get copyWith => __$$CategoryColorSelectedEventImplCopyWithImpl<
-          _$CategoryColorSelectedEventImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(int? categoryId) fetchFromId,
-    required TResult Function(bool isAddOrUpdate) addOrUpdate,
-    required TResult Function(int categoryId) delete,
-    required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(int categoryColor) colorSelected,
-    required TResult Function(CategoryType categoryType) updateType,
-  }) {
-    return colorSelected(categoryColor);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? categoryId)? fetchFromId,
-    TResult? Function(bool isAddOrUpdate)? addOrUpdate,
-    TResult? Function(int categoryId)? delete,
-    TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(int categoryColor)? colorSelected,
-    TResult? Function(CategoryType categoryType)? updateType,
-  }) {
-    return colorSelected?.call(categoryColor);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? categoryId)? fetchFromId,
-    TResult Function(bool isAddOrUpdate)? addOrUpdate,
-    TResult Function(int categoryId)? delete,
-    TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(bool isBudget)? updateBudget,
-    TResult Function(int categoryColor)? colorSelected,
-    TResult Function(CategoryType categoryType)? updateType,
-    required TResult orElse(),
-  }) {
-    if (colorSelected != null) {
-      return colorSelected(categoryColor);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
-    required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
-    required TResult Function(CategoryDeleteEvent value) delete,
-    required TResult Function(CategoryIconSelectedEvent value) iconSelected,
-    required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
-    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
-    required TResult Function(UpdateCategoryTypeEvent value) updateType,
-  }) {
-    return colorSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
-    TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
-    TResult? Function(CategoryDeleteEvent value)? delete,
-    TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
-    TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
-    TResult? Function(UpdateCategoryTypeEvent value)? updateType,
-  }) {
-    return colorSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
-    TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
-    TResult Function(CategoryDeleteEvent value)? delete,
-    TResult Function(CategoryIconSelectedEvent value)? iconSelected,
-    TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
-    TResult Function(UpdateCategoryTypeEvent value)? updateType,
-    required TResult orElse(),
-  }) {
-    if (colorSelected != null) {
-      return colorSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CategoryColorSelectedEvent implements CategoryEvent {
-  const factory CategoryColorSelectedEvent(final int categoryColor) =
-      _$CategoryColorSelectedEventImpl;
-
-  int get categoryColor;
-  @JsonKey(ignore: true)
-  _$$CategoryColorSelectedEventImplCopyWith<_$CategoryColorSelectedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1178,12 +1178,12 @@ class _$UpdateCategoryTypeEventImpl implements UpdateCategoryTypeEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(bool isAddOrUpdate) addOrUpdate,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(int categoryId) delete,
+    required TResult Function(int? categoryId) fetchFromId,
     required TResult Function(int categoryIcon) iconSelected,
     required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(int categoryColor) colorSelected,
     required TResult Function(CategoryType categoryType) updateType,
   }) {
     return updateType(categoryType);
@@ -1192,12 +1192,12 @@ class _$UpdateCategoryTypeEventImpl implements UpdateCategoryTypeEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(int categoryId)? delete,
+    TResult? Function(int? categoryId)? fetchFromId,
     TResult? Function(int categoryIcon)? iconSelected,
     TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function(CategoryType categoryType)? updateType,
   }) {
     return updateType?.call(categoryType);
@@ -1206,12 +1206,12 @@ class _$UpdateCategoryTypeEventImpl implements UpdateCategoryTypeEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(bool isAddOrUpdate)? addOrUpdate,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function(int categoryId)? delete,
+    TResult Function(int? categoryId)? fetchFromId,
     TResult Function(int categoryIcon)? iconSelected,
     TResult Function(bool isBudget)? updateBudget,
-    TResult Function(int categoryColor)? colorSelected,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
   }) {
@@ -1224,12 +1224,12 @@ class _$UpdateCategoryTypeEventImpl implements UpdateCategoryTypeEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(AddOrUpdateCategoryEvent value) addOrUpdate,
+    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(CategoryDeleteEvent value) delete,
+    required TResult Function(FetchCategoryFromIdEvent value) fetchFromId,
     required TResult Function(CategoryIconSelectedEvent value) iconSelected,
     required TResult Function(UpdateCategoryBudgetEvent value) updateBudget,
-    required TResult Function(CategoryColorSelectedEvent value) colorSelected,
     required TResult Function(UpdateCategoryTypeEvent value) updateType,
   }) {
     return updateType(this);
@@ -1238,12 +1238,12 @@ class _$UpdateCategoryTypeEventImpl implements UpdateCategoryTypeEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(CategoryDeleteEvent value)? delete,
+    TResult? Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult? Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult? Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult? Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult? Function(UpdateCategoryTypeEvent value)? updateType,
   }) {
     return updateType?.call(this);
@@ -1252,12 +1252,12 @@ class _$UpdateCategoryTypeEventImpl implements UpdateCategoryTypeEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(AddOrUpdateCategoryEvent value)? addOrUpdate,
+    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(CategoryDeleteEvent value)? delete,
+    TResult Function(FetchCategoryFromIdEvent value)? fetchFromId,
     TResult Function(CategoryIconSelectedEvent value)? iconSelected,
     TResult Function(UpdateCategoryBudgetEvent value)? updateBudget,
-    TResult Function(CategoryColorSelectedEvent value)? colorSelected,
     TResult Function(UpdateCategoryTypeEvent value)? updateType,
     required TResult orElse(),
   }) {
@@ -1282,39 +1282,39 @@ abstract class UpdateCategoryTypeEvent implements CategoryEvent {
 mixin _$CategoryState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function() deleted,
     required TResult Function(String errorString) error,
     required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isBudget) updateBudget,
     required TResult Function(CategoryType categoryType) updateType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function()? deleted,
     TResult? Function(String errorString)? error,
     TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isBudget)? updateBudget,
     TResult? Function(CategoryType categoryType)? updateType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function()? deleted,
     TResult Function(String errorString)? error,
     TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isBudget)? updateBudget,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
@@ -1322,39 +1322,39 @@ mixin _$CategoryState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
     required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
     required TResult Function(CategoryDeletedState value) deleted,
     required TResult Function(CategoryErrorState value) error,
     required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
     required TResult Function(UpdateCategoryBudgetState value) updateBudget,
     required TResult Function(UpdateCategoryTypeState value) updateType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
     TResult? Function(CategoryDeletedState value)? deleted,
     TResult? Function(CategoryErrorState value)? error,
     TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult? Function(UpdateCategoryTypeState value)? updateType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
     TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
     TResult Function(CategoryDeletedState value)? deleted,
     TResult Function(CategoryErrorState value)? error,
     TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
     TResult Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult Function(UpdateCategoryTypeState value)? updateType,
     required TResult orElse(),
@@ -1378,6 +1378,868 @@ class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$CategoryAddedStateImplCopyWith<$Res> {
+  factory _$$CategoryAddedStateImplCopyWith(_$CategoryAddedStateImpl value,
+          $Res Function(_$CategoryAddedStateImpl) then) =
+      __$$CategoryAddedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isCategoryAddedOrUpdate});
+}
+
+/// @nodoc
+class __$$CategoryAddedStateImplCopyWithImpl<$Res>
+    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryAddedStateImpl>
+    implements _$$CategoryAddedStateImplCopyWith<$Res> {
+  __$$CategoryAddedStateImplCopyWithImpl(_$CategoryAddedStateImpl _value,
+      $Res Function(_$CategoryAddedStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isCategoryAddedOrUpdate = null,
+  }) {
+    return _then(_$CategoryAddedStateImpl(
+      isCategoryAddedOrUpdate: null == isCategoryAddedOrUpdate
+          ? _value.isCategoryAddedOrUpdate
+          : isCategoryAddedOrUpdate // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CategoryAddedStateImpl implements CategoryAddedState {
+  const _$CategoryAddedStateImpl({required this.isCategoryAddedOrUpdate});
+
+  @override
+  final bool isCategoryAddedOrUpdate;
+
+  @override
+  String toString() {
+    return 'CategoryState.added(isCategoryAddedOrUpdate: $isCategoryAddedOrUpdate)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CategoryAddedStateImpl &&
+            (identical(
+                    other.isCategoryAddedOrUpdate, isCategoryAddedOrUpdate) ||
+                other.isCategoryAddedOrUpdate == isCategoryAddedOrUpdate));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isCategoryAddedOrUpdate);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CategoryAddedStateImplCopyWith<_$CategoryAddedStateImpl> get copyWith =>
+      __$$CategoryAddedStateImplCopyWithImpl<_$CategoryAddedStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() deleted,
+    required TResult Function(String errorString) error,
+    required TResult Function(int categoryIcon) iconSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
+    required TResult Function(bool isBudget) updateBudget,
+    required TResult Function(CategoryType categoryType) updateType,
+  }) {
+    return added(isCategoryAddedOrUpdate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? deleted,
+    TResult? Function(String errorString)? error,
+    TResult? Function(int categoryIcon)? iconSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
+    TResult? Function(bool isBudget)? updateBudget,
+    TResult? Function(CategoryType categoryType)? updateType,
+  }) {
+    return added?.call(isCategoryAddedOrUpdate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? deleted,
+    TResult Function(String errorString)? error,
+    TResult Function(int categoryIcon)? iconSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
+    TResult Function(bool isBudget)? updateBudget,
+    TResult Function(CategoryType categoryType)? updateType,
+    required TResult orElse(),
+  }) {
+    if (added != null) {
+      return added(isCategoryAddedOrUpdate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(CategoryDeletedState value) deleted,
+    required TResult Function(CategoryErrorState value) error,
+    required TResult Function(CategoryIconSelectedState value) iconSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
+    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
+    required TResult Function(UpdateCategoryTypeState value) updateType,
+  }) {
+    return added(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(CategoryDeletedState value)? deleted,
+    TResult? Function(CategoryErrorState value)? error,
+    TResult? Function(CategoryIconSelectedState value)? iconSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
+    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult? Function(UpdateCategoryTypeState value)? updateType,
+  }) {
+    return added?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(CategoryDeletedState value)? deleted,
+    TResult Function(CategoryErrorState value)? error,
+    TResult Function(CategoryIconSelectedState value)? iconSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
+    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult Function(UpdateCategoryTypeState value)? updateType,
+    required TResult orElse(),
+  }) {
+    if (added != null) {
+      return added(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CategoryAddedState implements CategoryState {
+  const factory CategoryAddedState(
+      {required final bool isCategoryAddedOrUpdate}) = _$CategoryAddedStateImpl;
+
+  bool get isCategoryAddedOrUpdate;
+  @JsonKey(ignore: true)
+  _$$CategoryAddedStateImplCopyWith<_$CategoryAddedStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CategoryColorSelectedStateImplCopyWith<$Res> {
+  factory _$$CategoryColorSelectedStateImplCopyWith(
+          _$CategoryColorSelectedStateImpl value,
+          $Res Function(_$CategoryColorSelectedStateImpl) then) =
+      __$$CategoryColorSelectedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int categoryColor});
+}
+
+/// @nodoc
+class __$$CategoryColorSelectedStateImplCopyWithImpl<$Res>
+    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryColorSelectedStateImpl>
+    implements _$$CategoryColorSelectedStateImplCopyWith<$Res> {
+  __$$CategoryColorSelectedStateImplCopyWithImpl(
+      _$CategoryColorSelectedStateImpl _value,
+      $Res Function(_$CategoryColorSelectedStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? categoryColor = null,
+  }) {
+    return _then(_$CategoryColorSelectedStateImpl(
+      null == categoryColor
+          ? _value.categoryColor
+          : categoryColor // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CategoryColorSelectedStateImpl implements CategoryColorSelectedState {
+  const _$CategoryColorSelectedStateImpl(this.categoryColor);
+
+  @override
+  final int categoryColor;
+
+  @override
+  String toString() {
+    return 'CategoryState.colorSelected(categoryColor: $categoryColor)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CategoryColorSelectedStateImpl &&
+            (identical(other.categoryColor, categoryColor) ||
+                other.categoryColor == categoryColor));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, categoryColor);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CategoryColorSelectedStateImplCopyWith<_$CategoryColorSelectedStateImpl>
+      get copyWith => __$$CategoryColorSelectedStateImplCopyWithImpl<
+          _$CategoryColorSelectedStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() deleted,
+    required TResult Function(String errorString) error,
+    required TResult Function(int categoryIcon) iconSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
+    required TResult Function(bool isBudget) updateBudget,
+    required TResult Function(CategoryType categoryType) updateType,
+  }) {
+    return colorSelected(categoryColor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? deleted,
+    TResult? Function(String errorString)? error,
+    TResult? Function(int categoryIcon)? iconSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
+    TResult? Function(bool isBudget)? updateBudget,
+    TResult? Function(CategoryType categoryType)? updateType,
+  }) {
+    return colorSelected?.call(categoryColor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? deleted,
+    TResult Function(String errorString)? error,
+    TResult Function(int categoryIcon)? iconSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
+    TResult Function(bool isBudget)? updateBudget,
+    TResult Function(CategoryType categoryType)? updateType,
+    required TResult orElse(),
+  }) {
+    if (colorSelected != null) {
+      return colorSelected(categoryColor);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(CategoryDeletedState value) deleted,
+    required TResult Function(CategoryErrorState value) error,
+    required TResult Function(CategoryIconSelectedState value) iconSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
+    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
+    required TResult Function(UpdateCategoryTypeState value) updateType,
+  }) {
+    return colorSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(CategoryDeletedState value)? deleted,
+    TResult? Function(CategoryErrorState value)? error,
+    TResult? Function(CategoryIconSelectedState value)? iconSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
+    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult? Function(UpdateCategoryTypeState value)? updateType,
+  }) {
+    return colorSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(CategoryDeletedState value)? deleted,
+    TResult Function(CategoryErrorState value)? error,
+    TResult Function(CategoryIconSelectedState value)? iconSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
+    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult Function(UpdateCategoryTypeState value)? updateType,
+    required TResult orElse(),
+  }) {
+    if (colorSelected != null) {
+      return colorSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CategoryColorSelectedState implements CategoryState {
+  const factory CategoryColorSelectedState(final int categoryColor) =
+      _$CategoryColorSelectedStateImpl;
+
+  int get categoryColor;
+  @JsonKey(ignore: true)
+  _$$CategoryColorSelectedStateImplCopyWith<_$CategoryColorSelectedStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CategoryDeletedStateImplCopyWith<$Res> {
+  factory _$$CategoryDeletedStateImplCopyWith(_$CategoryDeletedStateImpl value,
+          $Res Function(_$CategoryDeletedStateImpl) then) =
+      __$$CategoryDeletedStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CategoryDeletedStateImplCopyWithImpl<$Res>
+    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryDeletedStateImpl>
+    implements _$$CategoryDeletedStateImplCopyWith<$Res> {
+  __$$CategoryDeletedStateImplCopyWithImpl(_$CategoryDeletedStateImpl _value,
+      $Res Function(_$CategoryDeletedStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CategoryDeletedStateImpl implements CategoryDeletedState {
+  const _$CategoryDeletedStateImpl();
+
+  @override
+  String toString() {
+    return 'CategoryState.deleted()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CategoryDeletedStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() deleted,
+    required TResult Function(String errorString) error,
+    required TResult Function(int categoryIcon) iconSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
+    required TResult Function(bool isBudget) updateBudget,
+    required TResult Function(CategoryType categoryType) updateType,
+  }) {
+    return deleted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? deleted,
+    TResult? Function(String errorString)? error,
+    TResult? Function(int categoryIcon)? iconSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
+    TResult? Function(bool isBudget)? updateBudget,
+    TResult? Function(CategoryType categoryType)? updateType,
+  }) {
+    return deleted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? deleted,
+    TResult Function(String errorString)? error,
+    TResult Function(int categoryIcon)? iconSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
+    TResult Function(bool isBudget)? updateBudget,
+    TResult Function(CategoryType categoryType)? updateType,
+    required TResult orElse(),
+  }) {
+    if (deleted != null) {
+      return deleted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(CategoryDeletedState value) deleted,
+    required TResult Function(CategoryErrorState value) error,
+    required TResult Function(CategoryIconSelectedState value) iconSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
+    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
+    required TResult Function(UpdateCategoryTypeState value) updateType,
+  }) {
+    return deleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(CategoryDeletedState value)? deleted,
+    TResult? Function(CategoryErrorState value)? error,
+    TResult? Function(CategoryIconSelectedState value)? iconSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
+    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult? Function(UpdateCategoryTypeState value)? updateType,
+  }) {
+    return deleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(CategoryDeletedState value)? deleted,
+    TResult Function(CategoryErrorState value)? error,
+    TResult Function(CategoryIconSelectedState value)? iconSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
+    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult Function(UpdateCategoryTypeState value)? updateType,
+    required TResult orElse(),
+  }) {
+    if (deleted != null) {
+      return deleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CategoryDeletedState implements CategoryState {
+  const factory CategoryDeletedState() = _$CategoryDeletedStateImpl;
+}
+
+/// @nodoc
+abstract class _$$CategoryErrorStateImplCopyWith<$Res> {
+  factory _$$CategoryErrorStateImplCopyWith(_$CategoryErrorStateImpl value,
+          $Res Function(_$CategoryErrorStateImpl) then) =
+      __$$CategoryErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorString});
+}
+
+/// @nodoc
+class __$$CategoryErrorStateImplCopyWithImpl<$Res>
+    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryErrorStateImpl>
+    implements _$$CategoryErrorStateImplCopyWith<$Res> {
+  __$$CategoryErrorStateImplCopyWithImpl(_$CategoryErrorStateImpl _value,
+      $Res Function(_$CategoryErrorStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorString = null,
+  }) {
+    return _then(_$CategoryErrorStateImpl(
+      null == errorString
+          ? _value.errorString
+          : errorString // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CategoryErrorStateImpl implements CategoryErrorState {
+  const _$CategoryErrorStateImpl(this.errorString);
+
+  @override
+  final String errorString;
+
+  @override
+  String toString() {
+    return 'CategoryState.error(errorString: $errorString)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CategoryErrorStateImpl &&
+            (identical(other.errorString, errorString) ||
+                other.errorString == errorString));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorString);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CategoryErrorStateImplCopyWith<_$CategoryErrorStateImpl> get copyWith =>
+      __$$CategoryErrorStateImplCopyWithImpl<_$CategoryErrorStateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() deleted,
+    required TResult Function(String errorString) error,
+    required TResult Function(int categoryIcon) iconSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
+    required TResult Function(bool isBudget) updateBudget,
+    required TResult Function(CategoryType categoryType) updateType,
+  }) {
+    return error(errorString);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? deleted,
+    TResult? Function(String errorString)? error,
+    TResult? Function(int categoryIcon)? iconSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
+    TResult? Function(bool isBudget)? updateBudget,
+    TResult? Function(CategoryType categoryType)? updateType,
+  }) {
+    return error?.call(errorString);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? deleted,
+    TResult Function(String errorString)? error,
+    TResult Function(int categoryIcon)? iconSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
+    TResult Function(bool isBudget)? updateBudget,
+    TResult Function(CategoryType categoryType)? updateType,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(errorString);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(CategoryDeletedState value) deleted,
+    required TResult Function(CategoryErrorState value) error,
+    required TResult Function(CategoryIconSelectedState value) iconSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
+    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
+    required TResult Function(UpdateCategoryTypeState value) updateType,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(CategoryDeletedState value)? deleted,
+    TResult? Function(CategoryErrorState value)? error,
+    TResult? Function(CategoryIconSelectedState value)? iconSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
+    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult? Function(UpdateCategoryTypeState value)? updateType,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(CategoryDeletedState value)? deleted,
+    TResult Function(CategoryErrorState value)? error,
+    TResult Function(CategoryIconSelectedState value)? iconSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
+    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult Function(UpdateCategoryTypeState value)? updateType,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CategoryErrorState implements CategoryState {
+  const factory CategoryErrorState(final String errorString) =
+      _$CategoryErrorStateImpl;
+
+  String get errorString;
+  @JsonKey(ignore: true)
+  _$$CategoryErrorStateImplCopyWith<_$CategoryErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CategoryIconSelectedStateImplCopyWith<$Res> {
+  factory _$$CategoryIconSelectedStateImplCopyWith(
+          _$CategoryIconSelectedStateImpl value,
+          $Res Function(_$CategoryIconSelectedStateImpl) then) =
+      __$$CategoryIconSelectedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int categoryIcon});
+}
+
+/// @nodoc
+class __$$CategoryIconSelectedStateImplCopyWithImpl<$Res>
+    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryIconSelectedStateImpl>
+    implements _$$CategoryIconSelectedStateImplCopyWith<$Res> {
+  __$$CategoryIconSelectedStateImplCopyWithImpl(
+      _$CategoryIconSelectedStateImpl _value,
+      $Res Function(_$CategoryIconSelectedStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? categoryIcon = null,
+  }) {
+    return _then(_$CategoryIconSelectedStateImpl(
+      null == categoryIcon
+          ? _value.categoryIcon
+          : categoryIcon // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CategoryIconSelectedStateImpl implements CategoryIconSelectedState {
+  const _$CategoryIconSelectedStateImpl(this.categoryIcon);
+
+  @override
+  final int categoryIcon;
+
+  @override
+  String toString() {
+    return 'CategoryState.iconSelected(categoryIcon: $categoryIcon)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CategoryIconSelectedStateImpl &&
+            (identical(other.categoryIcon, categoryIcon) ||
+                other.categoryIcon == categoryIcon));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, categoryIcon);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CategoryIconSelectedStateImplCopyWith<_$CategoryIconSelectedStateImpl>
+      get copyWith => __$$CategoryIconSelectedStateImplCopyWithImpl<
+          _$CategoryIconSelectedStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() deleted,
+    required TResult Function(String errorString) error,
+    required TResult Function(int categoryIcon) iconSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
+    required TResult Function(bool isBudget) updateBudget,
+    required TResult Function(CategoryType categoryType) updateType,
+  }) {
+    return iconSelected(categoryIcon);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? deleted,
+    TResult? Function(String errorString)? error,
+    TResult? Function(int categoryIcon)? iconSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
+    TResult? Function(bool isBudget)? updateBudget,
+    TResult? Function(CategoryType categoryType)? updateType,
+  }) {
+    return iconSelected?.call(categoryIcon);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? deleted,
+    TResult Function(String errorString)? error,
+    TResult Function(int categoryIcon)? iconSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
+    TResult Function(bool isBudget)? updateBudget,
+    TResult Function(CategoryType categoryType)? updateType,
+    required TResult orElse(),
+  }) {
+    if (iconSelected != null) {
+      return iconSelected(categoryIcon);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(CategoryDeletedState value) deleted,
+    required TResult Function(CategoryErrorState value) error,
+    required TResult Function(CategoryIconSelectedState value) iconSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
+    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
+    required TResult Function(UpdateCategoryTypeState value) updateType,
+  }) {
+    return iconSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(CategoryDeletedState value)? deleted,
+    TResult? Function(CategoryErrorState value)? error,
+    TResult? Function(CategoryIconSelectedState value)? iconSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
+    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult? Function(UpdateCategoryTypeState value)? updateType,
+  }) {
+    return iconSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(CategoryDeletedState value)? deleted,
+    TResult Function(CategoryErrorState value)? error,
+    TResult Function(CategoryIconSelectedState value)? iconSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
+    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
+    TResult Function(UpdateCategoryTypeState value)? updateType,
+    required TResult orElse(),
+  }) {
+    if (iconSelected != null) {
+      return iconSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CategoryIconSelectedState implements CategoryState {
+  const factory CategoryIconSelectedState(final int categoryIcon) =
+      _$CategoryIconSelectedStateImpl;
+
+  int get categoryIcon;
+  @JsonKey(ignore: true)
+  _$$CategoryIconSelectedStateImplCopyWith<_$CategoryIconSelectedStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1418,13 +2280,13 @@ class _$AddCategoryInitialImpl implements AddCategoryInitial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function() deleted,
     required TResult Function(String errorString) error,
     required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isBudget) updateBudget,
     required TResult Function(CategoryType categoryType) updateType,
   }) {
@@ -1434,13 +2296,13 @@ class _$AddCategoryInitialImpl implements AddCategoryInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function()? deleted,
     TResult? Function(String errorString)? error,
     TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isBudget)? updateBudget,
     TResult? Function(CategoryType categoryType)? updateType,
   }) {
@@ -1450,13 +2312,13 @@ class _$AddCategoryInitialImpl implements AddCategoryInitial {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function()? deleted,
     TResult Function(String errorString)? error,
     TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isBudget)? updateBudget,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
@@ -1470,13 +2332,13 @@ class _$AddCategoryInitialImpl implements AddCategoryInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
     required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
     required TResult Function(CategoryDeletedState value) deleted,
     required TResult Function(CategoryErrorState value) error,
     required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
     required TResult Function(UpdateCategoryBudgetState value) updateBudget,
     required TResult Function(UpdateCategoryTypeState value) updateType,
   }) {
@@ -1486,13 +2348,13 @@ class _$AddCategoryInitialImpl implements AddCategoryInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
     TResult? Function(CategoryDeletedState value)? deleted,
     TResult? Function(CategoryErrorState value)? error,
     TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult? Function(UpdateCategoryTypeState value)? updateType,
   }) {
@@ -1502,13 +2364,13 @@ class _$AddCategoryInitialImpl implements AddCategoryInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
     TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
     TResult Function(CategoryDeletedState value)? deleted,
     TResult Function(CategoryErrorState value)? error,
     TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
     TResult Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult Function(UpdateCategoryTypeState value)? updateType,
     required TResult orElse(),
@@ -1601,13 +2463,13 @@ class _$CategorySuccessStateImpl implements CategorySuccessState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function() deleted,
     required TResult Function(String errorString) error,
     required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isBudget) updateBudget,
     required TResult Function(CategoryType categoryType) updateType,
   }) {
@@ -1617,13 +2479,13 @@ class _$CategorySuccessStateImpl implements CategorySuccessState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function()? deleted,
     TResult? Function(String errorString)? error,
     TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isBudget)? updateBudget,
     TResult? Function(CategoryType categoryType)? updateType,
   }) {
@@ -1633,13 +2495,13 @@ class _$CategorySuccessStateImpl implements CategorySuccessState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function()? deleted,
     TResult Function(String errorString)? error,
     TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isBudget)? updateBudget,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
@@ -1653,13 +2515,13 @@ class _$CategorySuccessStateImpl implements CategorySuccessState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
     required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
     required TResult Function(CategoryDeletedState value) deleted,
     required TResult Function(CategoryErrorState value) error,
     required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
     required TResult Function(UpdateCategoryBudgetState value) updateBudget,
     required TResult Function(UpdateCategoryTypeState value) updateType,
   }) {
@@ -1669,13 +2531,13 @@ class _$CategorySuccessStateImpl implements CategorySuccessState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
     TResult? Function(CategoryDeletedState value)? deleted,
     TResult? Function(CategoryErrorState value)? error,
     TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult? Function(UpdateCategoryTypeState value)? updateType,
   }) {
@@ -1685,13 +2547,13 @@ class _$CategorySuccessStateImpl implements CategorySuccessState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
     TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
     TResult Function(CategoryDeletedState value)? deleted,
     TResult Function(CategoryErrorState value)? error,
     TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
     TResult Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult Function(UpdateCategoryTypeState value)? updateType,
     required TResult orElse(),
@@ -1710,868 +2572,6 @@ abstract class CategorySuccessState implements CategoryState {
   CategoryEntity get category;
   @JsonKey(ignore: true)
   _$$CategorySuccessStateImplCopyWith<_$CategorySuccessStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CategoryAddedStateImplCopyWith<$Res> {
-  factory _$$CategoryAddedStateImplCopyWith(_$CategoryAddedStateImpl value,
-          $Res Function(_$CategoryAddedStateImpl) then) =
-      __$$CategoryAddedStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool isCategoryAddedOrUpdate});
-}
-
-/// @nodoc
-class __$$CategoryAddedStateImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryAddedStateImpl>
-    implements _$$CategoryAddedStateImplCopyWith<$Res> {
-  __$$CategoryAddedStateImplCopyWithImpl(_$CategoryAddedStateImpl _value,
-      $Res Function(_$CategoryAddedStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isCategoryAddedOrUpdate = null,
-  }) {
-    return _then(_$CategoryAddedStateImpl(
-      isCategoryAddedOrUpdate: null == isCategoryAddedOrUpdate
-          ? _value.isCategoryAddedOrUpdate
-          : isCategoryAddedOrUpdate // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CategoryAddedStateImpl implements CategoryAddedState {
-  const _$CategoryAddedStateImpl({required this.isCategoryAddedOrUpdate});
-
-  @override
-  final bool isCategoryAddedOrUpdate;
-
-  @override
-  String toString() {
-    return 'CategoryState.added(isCategoryAddedOrUpdate: $isCategoryAddedOrUpdate)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CategoryAddedStateImpl &&
-            (identical(
-                    other.isCategoryAddedOrUpdate, isCategoryAddedOrUpdate) ||
-                other.isCategoryAddedOrUpdate == isCategoryAddedOrUpdate));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, isCategoryAddedOrUpdate);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CategoryAddedStateImplCopyWith<_$CategoryAddedStateImpl> get copyWith =>
-      __$$CategoryAddedStateImplCopyWithImpl<_$CategoryAddedStateImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
-    required TResult Function(bool isCategoryAddedOrUpdate) added,
-    required TResult Function() deleted,
-    required TResult Function(String errorString) error,
-    required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
-    required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(CategoryType categoryType) updateType,
-  }) {
-    return added(isCategoryAddedOrUpdate);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
-    TResult? Function(bool isCategoryAddedOrUpdate)? added,
-    TResult? Function()? deleted,
-    TResult? Function(String errorString)? error,
-    TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
-    TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(CategoryType categoryType)? updateType,
-  }) {
-    return added?.call(isCategoryAddedOrUpdate);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
-    TResult Function(bool isCategoryAddedOrUpdate)? added,
-    TResult Function()? deleted,
-    TResult Function(String errorString)? error,
-    TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
-    TResult Function(bool isBudget)? updateBudget,
-    TResult Function(CategoryType categoryType)? updateType,
-    required TResult orElse(),
-  }) {
-    if (added != null) {
-      return added(isCategoryAddedOrUpdate);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
-    required TResult Function(CategoryAddedState value) added,
-    required TResult Function(CategoryDeletedState value) deleted,
-    required TResult Function(CategoryErrorState value) error,
-    required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
-    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
-    required TResult Function(UpdateCategoryTypeState value) updateType,
-  }) {
-    return added(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
-    TResult? Function(CategoryAddedState value)? added,
-    TResult? Function(CategoryDeletedState value)? deleted,
-    TResult? Function(CategoryErrorState value)? error,
-    TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
-    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult? Function(UpdateCategoryTypeState value)? updateType,
-  }) {
-    return added?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
-    TResult Function(CategoryAddedState value)? added,
-    TResult Function(CategoryDeletedState value)? deleted,
-    TResult Function(CategoryErrorState value)? error,
-    TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
-    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult Function(UpdateCategoryTypeState value)? updateType,
-    required TResult orElse(),
-  }) {
-    if (added != null) {
-      return added(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CategoryAddedState implements CategoryState {
-  const factory CategoryAddedState(
-      {required final bool isCategoryAddedOrUpdate}) = _$CategoryAddedStateImpl;
-
-  bool get isCategoryAddedOrUpdate;
-  @JsonKey(ignore: true)
-  _$$CategoryAddedStateImplCopyWith<_$CategoryAddedStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CategoryDeletedStateImplCopyWith<$Res> {
-  factory _$$CategoryDeletedStateImplCopyWith(_$CategoryDeletedStateImpl value,
-          $Res Function(_$CategoryDeletedStateImpl) then) =
-      __$$CategoryDeletedStateImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CategoryDeletedStateImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryDeletedStateImpl>
-    implements _$$CategoryDeletedStateImplCopyWith<$Res> {
-  __$$CategoryDeletedStateImplCopyWithImpl(_$CategoryDeletedStateImpl _value,
-      $Res Function(_$CategoryDeletedStateImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$CategoryDeletedStateImpl implements CategoryDeletedState {
-  const _$CategoryDeletedStateImpl();
-
-  @override
-  String toString() {
-    return 'CategoryState.deleted()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CategoryDeletedStateImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
-    required TResult Function(bool isCategoryAddedOrUpdate) added,
-    required TResult Function() deleted,
-    required TResult Function(String errorString) error,
-    required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
-    required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(CategoryType categoryType) updateType,
-  }) {
-    return deleted();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
-    TResult? Function(bool isCategoryAddedOrUpdate)? added,
-    TResult? Function()? deleted,
-    TResult? Function(String errorString)? error,
-    TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
-    TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(CategoryType categoryType)? updateType,
-  }) {
-    return deleted?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
-    TResult Function(bool isCategoryAddedOrUpdate)? added,
-    TResult Function()? deleted,
-    TResult Function(String errorString)? error,
-    TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
-    TResult Function(bool isBudget)? updateBudget,
-    TResult Function(CategoryType categoryType)? updateType,
-    required TResult orElse(),
-  }) {
-    if (deleted != null) {
-      return deleted();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
-    required TResult Function(CategoryAddedState value) added,
-    required TResult Function(CategoryDeletedState value) deleted,
-    required TResult Function(CategoryErrorState value) error,
-    required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
-    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
-    required TResult Function(UpdateCategoryTypeState value) updateType,
-  }) {
-    return deleted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
-    TResult? Function(CategoryAddedState value)? added,
-    TResult? Function(CategoryDeletedState value)? deleted,
-    TResult? Function(CategoryErrorState value)? error,
-    TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
-    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult? Function(UpdateCategoryTypeState value)? updateType,
-  }) {
-    return deleted?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
-    TResult Function(CategoryAddedState value)? added,
-    TResult Function(CategoryDeletedState value)? deleted,
-    TResult Function(CategoryErrorState value)? error,
-    TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
-    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult Function(UpdateCategoryTypeState value)? updateType,
-    required TResult orElse(),
-  }) {
-    if (deleted != null) {
-      return deleted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CategoryDeletedState implements CategoryState {
-  const factory CategoryDeletedState() = _$CategoryDeletedStateImpl;
-}
-
-/// @nodoc
-abstract class _$$CategoryErrorStateImplCopyWith<$Res> {
-  factory _$$CategoryErrorStateImplCopyWith(_$CategoryErrorStateImpl value,
-          $Res Function(_$CategoryErrorStateImpl) then) =
-      __$$CategoryErrorStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String errorString});
-}
-
-/// @nodoc
-class __$$CategoryErrorStateImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryErrorStateImpl>
-    implements _$$CategoryErrorStateImplCopyWith<$Res> {
-  __$$CategoryErrorStateImplCopyWithImpl(_$CategoryErrorStateImpl _value,
-      $Res Function(_$CategoryErrorStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorString = null,
-  }) {
-    return _then(_$CategoryErrorStateImpl(
-      null == errorString
-          ? _value.errorString
-          : errorString // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CategoryErrorStateImpl implements CategoryErrorState {
-  const _$CategoryErrorStateImpl(this.errorString);
-
-  @override
-  final String errorString;
-
-  @override
-  String toString() {
-    return 'CategoryState.error(errorString: $errorString)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CategoryErrorStateImpl &&
-            (identical(other.errorString, errorString) ||
-                other.errorString == errorString));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, errorString);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CategoryErrorStateImplCopyWith<_$CategoryErrorStateImpl> get copyWith =>
-      __$$CategoryErrorStateImplCopyWithImpl<_$CategoryErrorStateImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
-    required TResult Function(bool isCategoryAddedOrUpdate) added,
-    required TResult Function() deleted,
-    required TResult Function(String errorString) error,
-    required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
-    required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(CategoryType categoryType) updateType,
-  }) {
-    return error(errorString);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
-    TResult? Function(bool isCategoryAddedOrUpdate)? added,
-    TResult? Function()? deleted,
-    TResult? Function(String errorString)? error,
-    TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
-    TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(CategoryType categoryType)? updateType,
-  }) {
-    return error?.call(errorString);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
-    TResult Function(bool isCategoryAddedOrUpdate)? added,
-    TResult Function()? deleted,
-    TResult Function(String errorString)? error,
-    TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
-    TResult Function(bool isBudget)? updateBudget,
-    TResult Function(CategoryType categoryType)? updateType,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(errorString);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
-    required TResult Function(CategoryAddedState value) added,
-    required TResult Function(CategoryDeletedState value) deleted,
-    required TResult Function(CategoryErrorState value) error,
-    required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
-    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
-    required TResult Function(UpdateCategoryTypeState value) updateType,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
-    TResult? Function(CategoryAddedState value)? added,
-    TResult? Function(CategoryDeletedState value)? deleted,
-    TResult? Function(CategoryErrorState value)? error,
-    TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
-    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult? Function(UpdateCategoryTypeState value)? updateType,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
-    TResult Function(CategoryAddedState value)? added,
-    TResult Function(CategoryDeletedState value)? deleted,
-    TResult Function(CategoryErrorState value)? error,
-    TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
-    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult Function(UpdateCategoryTypeState value)? updateType,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CategoryErrorState implements CategoryState {
-  const factory CategoryErrorState(final String errorString) =
-      _$CategoryErrorStateImpl;
-
-  String get errorString;
-  @JsonKey(ignore: true)
-  _$$CategoryErrorStateImplCopyWith<_$CategoryErrorStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CategoryIconSelectedStateImplCopyWith<$Res> {
-  factory _$$CategoryIconSelectedStateImplCopyWith(
-          _$CategoryIconSelectedStateImpl value,
-          $Res Function(_$CategoryIconSelectedStateImpl) then) =
-      __$$CategoryIconSelectedStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int categoryIcon});
-}
-
-/// @nodoc
-class __$$CategoryIconSelectedStateImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryIconSelectedStateImpl>
-    implements _$$CategoryIconSelectedStateImplCopyWith<$Res> {
-  __$$CategoryIconSelectedStateImplCopyWithImpl(
-      _$CategoryIconSelectedStateImpl _value,
-      $Res Function(_$CategoryIconSelectedStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? categoryIcon = null,
-  }) {
-    return _then(_$CategoryIconSelectedStateImpl(
-      null == categoryIcon
-          ? _value.categoryIcon
-          : categoryIcon // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CategoryIconSelectedStateImpl implements CategoryIconSelectedState {
-  const _$CategoryIconSelectedStateImpl(this.categoryIcon);
-
-  @override
-  final int categoryIcon;
-
-  @override
-  String toString() {
-    return 'CategoryState.iconSelected(categoryIcon: $categoryIcon)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CategoryIconSelectedStateImpl &&
-            (identical(other.categoryIcon, categoryIcon) ||
-                other.categoryIcon == categoryIcon));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, categoryIcon);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CategoryIconSelectedStateImplCopyWith<_$CategoryIconSelectedStateImpl>
-      get copyWith => __$$CategoryIconSelectedStateImplCopyWithImpl<
-          _$CategoryIconSelectedStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
-    required TResult Function(bool isCategoryAddedOrUpdate) added,
-    required TResult Function() deleted,
-    required TResult Function(String errorString) error,
-    required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
-    required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(CategoryType categoryType) updateType,
-  }) {
-    return iconSelected(categoryIcon);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
-    TResult? Function(bool isCategoryAddedOrUpdate)? added,
-    TResult? Function()? deleted,
-    TResult? Function(String errorString)? error,
-    TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
-    TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(CategoryType categoryType)? updateType,
-  }) {
-    return iconSelected?.call(categoryIcon);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
-    TResult Function(bool isCategoryAddedOrUpdate)? added,
-    TResult Function()? deleted,
-    TResult Function(String errorString)? error,
-    TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
-    TResult Function(bool isBudget)? updateBudget,
-    TResult Function(CategoryType categoryType)? updateType,
-    required TResult orElse(),
-  }) {
-    if (iconSelected != null) {
-      return iconSelected(categoryIcon);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
-    required TResult Function(CategoryAddedState value) added,
-    required TResult Function(CategoryDeletedState value) deleted,
-    required TResult Function(CategoryErrorState value) error,
-    required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
-    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
-    required TResult Function(UpdateCategoryTypeState value) updateType,
-  }) {
-    return iconSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
-    TResult? Function(CategoryAddedState value)? added,
-    TResult? Function(CategoryDeletedState value)? deleted,
-    TResult? Function(CategoryErrorState value)? error,
-    TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
-    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult? Function(UpdateCategoryTypeState value)? updateType,
-  }) {
-    return iconSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
-    TResult Function(CategoryAddedState value)? added,
-    TResult Function(CategoryDeletedState value)? deleted,
-    TResult Function(CategoryErrorState value)? error,
-    TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
-    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult Function(UpdateCategoryTypeState value)? updateType,
-    required TResult orElse(),
-  }) {
-    if (iconSelected != null) {
-      return iconSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CategoryIconSelectedState implements CategoryState {
-  const factory CategoryIconSelectedState(final int categoryIcon) =
-      _$CategoryIconSelectedStateImpl;
-
-  int get categoryIcon;
-  @JsonKey(ignore: true)
-  _$$CategoryIconSelectedStateImplCopyWith<_$CategoryIconSelectedStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CategoryColorSelectedStateImplCopyWith<$Res> {
-  factory _$$CategoryColorSelectedStateImplCopyWith(
-          _$CategoryColorSelectedStateImpl value,
-          $Res Function(_$CategoryColorSelectedStateImpl) then) =
-      __$$CategoryColorSelectedStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int categoryColor});
-}
-
-/// @nodoc
-class __$$CategoryColorSelectedStateImplCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res, _$CategoryColorSelectedStateImpl>
-    implements _$$CategoryColorSelectedStateImplCopyWith<$Res> {
-  __$$CategoryColorSelectedStateImplCopyWithImpl(
-      _$CategoryColorSelectedStateImpl _value,
-      $Res Function(_$CategoryColorSelectedStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? categoryColor = null,
-  }) {
-    return _then(_$CategoryColorSelectedStateImpl(
-      null == categoryColor
-          ? _value.categoryColor
-          : categoryColor // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CategoryColorSelectedStateImpl implements CategoryColorSelectedState {
-  const _$CategoryColorSelectedStateImpl(this.categoryColor);
-
-  @override
-  final int categoryColor;
-
-  @override
-  String toString() {
-    return 'CategoryState.colorSelected(categoryColor: $categoryColor)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CategoryColorSelectedStateImpl &&
-            (identical(other.categoryColor, categoryColor) ||
-                other.categoryColor == categoryColor));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, categoryColor);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CategoryColorSelectedStateImplCopyWith<_$CategoryColorSelectedStateImpl>
-      get copyWith => __$$CategoryColorSelectedStateImplCopyWithImpl<
-          _$CategoryColorSelectedStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
-    required TResult Function(bool isCategoryAddedOrUpdate) added,
-    required TResult Function() deleted,
-    required TResult Function(String errorString) error,
-    required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
-    required TResult Function(bool isBudget) updateBudget,
-    required TResult Function(CategoryType categoryType) updateType,
-  }) {
-    return colorSelected(categoryColor);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
-    TResult? Function(bool isCategoryAddedOrUpdate)? added,
-    TResult? Function()? deleted,
-    TResult? Function(String errorString)? error,
-    TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
-    TResult? Function(bool isBudget)? updateBudget,
-    TResult? Function(CategoryType categoryType)? updateType,
-  }) {
-    return colorSelected?.call(categoryColor);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
-    TResult Function(bool isCategoryAddedOrUpdate)? added,
-    TResult Function()? deleted,
-    TResult Function(String errorString)? error,
-    TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
-    TResult Function(bool isBudget)? updateBudget,
-    TResult Function(CategoryType categoryType)? updateType,
-    required TResult orElse(),
-  }) {
-    if (colorSelected != null) {
-      return colorSelected(categoryColor);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
-    required TResult Function(CategoryAddedState value) added,
-    required TResult Function(CategoryDeletedState value) deleted,
-    required TResult Function(CategoryErrorState value) error,
-    required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
-    required TResult Function(UpdateCategoryBudgetState value) updateBudget,
-    required TResult Function(UpdateCategoryTypeState value) updateType,
-  }) {
-    return colorSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
-    TResult? Function(CategoryAddedState value)? added,
-    TResult? Function(CategoryDeletedState value)? deleted,
-    TResult? Function(CategoryErrorState value)? error,
-    TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
-    TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult? Function(UpdateCategoryTypeState value)? updateType,
-  }) {
-    return colorSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
-    TResult Function(CategoryAddedState value)? added,
-    TResult Function(CategoryDeletedState value)? deleted,
-    TResult Function(CategoryErrorState value)? error,
-    TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
-    TResult Function(UpdateCategoryBudgetState value)? updateBudget,
-    TResult Function(UpdateCategoryTypeState value)? updateType,
-    required TResult orElse(),
-  }) {
-    if (colorSelected != null) {
-      return colorSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CategoryColorSelectedState implements CategoryState {
-  const factory CategoryColorSelectedState(final int categoryColor) =
-      _$CategoryColorSelectedStateImpl;
-
-  int get categoryColor;
-  @JsonKey(ignore: true)
-  _$$CategoryColorSelectedStateImplCopyWith<_$CategoryColorSelectedStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2643,13 +2643,13 @@ class _$UpdateCategoryBudgetStateImpl implements UpdateCategoryBudgetState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function() deleted,
     required TResult Function(String errorString) error,
     required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isBudget) updateBudget,
     required TResult Function(CategoryType categoryType) updateType,
   }) {
@@ -2659,13 +2659,13 @@ class _$UpdateCategoryBudgetStateImpl implements UpdateCategoryBudgetState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function()? deleted,
     TResult? Function(String errorString)? error,
     TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isBudget)? updateBudget,
     TResult? Function(CategoryType categoryType)? updateType,
   }) {
@@ -2675,13 +2675,13 @@ class _$UpdateCategoryBudgetStateImpl implements UpdateCategoryBudgetState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function()? deleted,
     TResult Function(String errorString)? error,
     TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isBudget)? updateBudget,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
@@ -2695,13 +2695,13 @@ class _$UpdateCategoryBudgetStateImpl implements UpdateCategoryBudgetState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
     required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
     required TResult Function(CategoryDeletedState value) deleted,
     required TResult Function(CategoryErrorState value) error,
     required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
     required TResult Function(UpdateCategoryBudgetState value) updateBudget,
     required TResult Function(UpdateCategoryTypeState value) updateType,
   }) {
@@ -2711,13 +2711,13 @@ class _$UpdateCategoryBudgetStateImpl implements UpdateCategoryBudgetState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
     TResult? Function(CategoryDeletedState value)? deleted,
     TResult? Function(CategoryErrorState value)? error,
     TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult? Function(UpdateCategoryTypeState value)? updateType,
   }) {
@@ -2727,13 +2727,13 @@ class _$UpdateCategoryBudgetStateImpl implements UpdateCategoryBudgetState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
     TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
     TResult Function(CategoryDeletedState value)? deleted,
     TResult Function(CategoryErrorState value)? error,
     TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
     TResult Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult Function(UpdateCategoryTypeState value)? updateType,
     required TResult orElse(),
@@ -2823,13 +2823,13 @@ class _$UpdateCategoryTypeStateImpl implements UpdateCategoryTypeState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isCategoryAddedOrUpdate) added,
+    required TResult Function(int categoryColor) colorSelected,
     required TResult Function() deleted,
     required TResult Function(String errorString) error,
     required TResult Function(int categoryIcon) iconSelected,
-    required TResult Function(int categoryColor) colorSelected,
+    required TResult Function() initial,
+    required TResult Function(CategoryEntity category) success,
     required TResult Function(bool isBudget) updateBudget,
     required TResult Function(CategoryType categoryType) updateType,
   }) {
@@ -2839,13 +2839,13 @@ class _$UpdateCategoryTypeStateImpl implements UpdateCategoryTypeState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isCategoryAddedOrUpdate)? added,
+    TResult? Function(int categoryColor)? colorSelected,
     TResult? Function()? deleted,
     TResult? Function(String errorString)? error,
     TResult? Function(int categoryIcon)? iconSelected,
-    TResult? Function(int categoryColor)? colorSelected,
+    TResult? Function()? initial,
+    TResult? Function(CategoryEntity category)? success,
     TResult? Function(bool isBudget)? updateBudget,
     TResult? Function(CategoryType categoryType)? updateType,
   }) {
@@ -2855,13 +2855,13 @@ class _$UpdateCategoryTypeStateImpl implements UpdateCategoryTypeState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isCategoryAddedOrUpdate)? added,
+    TResult Function(int categoryColor)? colorSelected,
     TResult Function()? deleted,
     TResult Function(String errorString)? error,
     TResult Function(int categoryIcon)? iconSelected,
-    TResult Function(int categoryColor)? colorSelected,
+    TResult Function()? initial,
+    TResult Function(CategoryEntity category)? success,
     TResult Function(bool isBudget)? updateBudget,
     TResult Function(CategoryType categoryType)? updateType,
     required TResult orElse(),
@@ -2875,13 +2875,13 @@ class _$UpdateCategoryTypeStateImpl implements UpdateCategoryTypeState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AddCategoryInitial value) initial,
-    required TResult Function(CategorySuccessState value) success,
     required TResult Function(CategoryAddedState value) added,
+    required TResult Function(CategoryColorSelectedState value) colorSelected,
     required TResult Function(CategoryDeletedState value) deleted,
     required TResult Function(CategoryErrorState value) error,
     required TResult Function(CategoryIconSelectedState value) iconSelected,
-    required TResult Function(CategoryColorSelectedState value) colorSelected,
+    required TResult Function(AddCategoryInitial value) initial,
+    required TResult Function(CategorySuccessState value) success,
     required TResult Function(UpdateCategoryBudgetState value) updateBudget,
     required TResult Function(UpdateCategoryTypeState value) updateType,
   }) {
@@ -2891,13 +2891,13 @@ class _$UpdateCategoryTypeStateImpl implements UpdateCategoryTypeState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AddCategoryInitial value)? initial,
-    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(CategoryAddedState value)? added,
+    TResult? Function(CategoryColorSelectedState value)? colorSelected,
     TResult? Function(CategoryDeletedState value)? deleted,
     TResult? Function(CategoryErrorState value)? error,
     TResult? Function(CategoryIconSelectedState value)? iconSelected,
-    TResult? Function(CategoryColorSelectedState value)? colorSelected,
+    TResult? Function(AddCategoryInitial value)? initial,
+    TResult? Function(CategorySuccessState value)? success,
     TResult? Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult? Function(UpdateCategoryTypeState value)? updateType,
   }) {
@@ -2907,13 +2907,13 @@ class _$UpdateCategoryTypeStateImpl implements UpdateCategoryTypeState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AddCategoryInitial value)? initial,
-    TResult Function(CategorySuccessState value)? success,
     TResult Function(CategoryAddedState value)? added,
+    TResult Function(CategoryColorSelectedState value)? colorSelected,
     TResult Function(CategoryDeletedState value)? deleted,
     TResult Function(CategoryErrorState value)? error,
     TResult Function(CategoryIconSelectedState value)? iconSelected,
-    TResult Function(CategoryColorSelectedState value)? colorSelected,
+    TResult Function(AddCategoryInitial value)? initial,
+    TResult Function(CategorySuccessState value)? success,
     TResult Function(UpdateCategoryBudgetState value)? updateBudget,
     TResult Function(UpdateCategoryTypeState value)? updateType,
     required TResult orElse(),

@@ -458,6 +458,9 @@ extension $CategoryPageDataExtension on CategoryPageData {
         categoryType: _$convertMapValue('category-type',
                 state.uri.queryParameters, _$CategoryTypeEnumMap._$fromName) ??
             CategoryType.income,
+        isTransferCategoryType: _$convertMapValue('is-transfer-category-type',
+                state.uri.queryParameters, _$boolConverter) ??
+            false,
       );
 
   String get location => GoRouteData.$location(
@@ -466,6 +469,8 @@ extension $CategoryPageDataExtension on CategoryPageData {
           if (categoryId != null) 'category-id': categoryId!.toString(),
           if (categoryType != CategoryType.income)
             'category-type': _$CategoryTypeEnumMap[categoryType],
+          if (isTransferCategoryType != false)
+            'is-transfer-category-type': isTransferCategoryType.toString(),
         },
       );
 
@@ -482,6 +487,7 @@ extension $CategoryPageDataExtension on CategoryPageData {
 const _$CategoryTypeEnumMap = {
   CategoryType.income: 'income',
   CategoryType.expense: 'expense',
+  CategoryType.transfer: 'transfer',
 };
 
 extension $CategoryIconPickerPageDataExtension on CategoryIconPickerPageData {

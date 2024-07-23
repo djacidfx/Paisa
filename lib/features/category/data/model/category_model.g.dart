@@ -20,8 +20,7 @@ class CategoryModelAdapter extends TypeAdapter<_$CategoryModelImpl> {
       name: fields[0] as String,
       description: fields[1] as String?,
       icon: fields[2] as int,
-      isTransferCategory: fields[3] == null ? false : fields[3] as bool,
-      superId: fields[4] == null ? 0 : fields[4] as int?,
+      superId: fields[4] as int?,
       budget: fields[6] == null ? 0 : fields[6] as double?,
       isBudget: fields[7] == null ? false : fields[7] as bool,
       color: fields[8] == null ? 4294951175 : fields[8] as int?,
@@ -32,15 +31,13 @@ class CategoryModelAdapter extends TypeAdapter<_$CategoryModelImpl> {
   @override
   void write(BinaryWriter writer, _$CategoryModelImpl obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.name)
       ..writeByte(1)
       ..write(obj.description)
       ..writeByte(2)
       ..write(obj.icon)
-      ..writeByte(3)
-      ..write(obj.isTransferCategory)
       ..writeByte(4)
       ..write(obj.superId)
       ..writeByte(6)
@@ -73,7 +70,6 @@ _$CategoryModelImpl _$$CategoryModelImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       description: json['description'] as String?,
       icon: (json['icon'] as num).toInt(),
-      isTransferCategory: json['isTransferCategory'] as bool? ?? false,
       superId: (json['superId'] as num?)?.toInt(),
       budget: (json['budget'] as num?)?.toDouble(),
       isBudget: json['isBudget'] as bool? ?? false,
@@ -88,7 +84,6 @@ Map<String, dynamic> _$$CategoryModelImplToJson(_$CategoryModelImpl instance) =>
       'name': instance.name,
       'description': instance.description,
       'icon': instance.icon,
-      'isTransferCategory': instance.isTransferCategory,
       'superId': instance.superId,
       'budget': instance.budget,
       'isBudget': instance.isBudget,
@@ -99,4 +94,5 @@ Map<String, dynamic> _$$CategoryModelImplToJson(_$CategoryModelImpl instance) =>
 const _$CategoryTypeEnumMap = {
   CategoryType.income: 'income',
   CategoryType.expense: 'expense',
+  CategoryType.transfer: 'transfer',
 };

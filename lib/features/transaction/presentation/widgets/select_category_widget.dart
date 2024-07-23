@@ -31,12 +31,12 @@ class SelectCategoryWidget extends StatelessWidget {
     return ValueListenableBuilder<Box<CategoryModel>>(
       valueListenable: getIt<Box<CategoryModel>>().listenable(),
       builder: (context, value, child) {
-        final List<CategoryEntity> filterDefault = value.filterDefault;
-        final List<CategoryEntity> categories = filterDefault.where((element) {
-          return element.categoryType ==
-              _categoryType(context.watch<TransactionBloc>().transactionType);
-        }).toList();
-        if (categories.isEmpty) {
+        final CategoryType categoryType =
+            _categoryType(context.watch<TransactionBloc>().transactionType);
+        final List<CategoryEntity> filterDefault =
+            value.filterType(categoryType);
+
+        if (filterDefault.isEmpty) {
           return ListTile(
             onTap: () {
               CategoryPageData(
@@ -65,7 +65,7 @@ class SelectCategoryWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              SelectedItem(categories: categories)
+              SelectedItem(categories: filterDefault)
             ],
           ),
           mobile: (p0) => Column(
@@ -74,7 +74,7 @@ class SelectCategoryWidget extends StatelessWidget {
               PaisaSubTitle(
                 title: context.loc.selectCategory,
               ),
-              SelectedItem(categories: categories)
+              SelectedItem(categories: filterDefault)
             ],
           ),
         );

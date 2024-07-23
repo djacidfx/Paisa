@@ -8,6 +8,7 @@ import 'package:paisa/core/common.dart';
 import 'package:paisa/core/common_enum.dart';
 import 'package:paisa/features/account/presentation/pages/add/add_account_page.dart';
 import 'package:paisa/features/account/presentation/pages/transactions_by_account_page.dart';
+import 'package:paisa/features/category/presentation/bloc/category_bloc.dart';
 import 'package:paisa/features/category/presentation/pages/add/add_category_page.dart';
 import 'package:paisa/features/category/presentation/pages/category_icon_picker_page.dart';
 import 'package:paisa/features/debit/presentation/pages/add/add_debit_page.dart';
@@ -275,7 +276,7 @@ class AccountPageData extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return AccountPage(accountId: accountId);
+    return AddAccountPage(accountId: accountId);
   }
 }
 
@@ -283,16 +284,22 @@ class CategoryPageData extends GoRouteData {
   const CategoryPageData({
     this.categoryId,
     this.categoryType = CategoryType.income,
+    this.isTransferCategoryType = false,
   });
 
   final int? categoryId;
   final CategoryType categoryType;
+  final bool isTransferCategoryType;
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return CategoryPage(
-      categoryId: categoryId,
-      categoryType: categoryType,
+    return BlocProvider(
+      create: (context) => getIt<CategoryBloc>(param1: categoryId),
+      child: CategoryPage(
+        categoryId: categoryId,
+        categoryType: categoryType,
+        isTransferCategoryType: isTransferCategoryType,
+      ),
     );
   }
 }

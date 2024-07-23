@@ -21,7 +21,6 @@ class CategoryRepositoryImpl implements CategoryRepository {
     required String? desc,
     bool isBudget = false,
     required double? budget,
-    bool isDefault = false,
     CategoryType categoryType = CategoryType.income,
   }) {
     return dataSources.add(CategoryModel(
@@ -31,18 +30,12 @@ class CategoryRepositoryImpl implements CategoryRepository {
       budget: budget,
       isBudget: isBudget,
       color: color,
-      isTransferCategory: isDefault,
       categoryType: categoryType,
     ));
   }
 
   @override
   Future<void> clear() => dataSources.clear();
-
-  @override
-  List<CategoryEntity> defaultCategories() {
-    return dataSources.defaultCategories().toEntities();
-  }
 
   @override
   Future<void> delete(int key) => dataSources.delete(key);
@@ -60,7 +53,6 @@ class CategoryRepositoryImpl implements CategoryRepository {
     required String? desc,
     bool isBudget = false,
     required double? budget,
-    bool isDefault = false,
     CategoryType categoryType = CategoryType.income,
   }) {
     return dataSources.update(CategoryModel(
@@ -69,7 +61,6 @@ class CategoryRepositoryImpl implements CategoryRepository {
       icon: icon,
       budget: budget,
       isBudget: isBudget,
-      isTransferCategory: isDefault,
       color: color,
       superId: key,
       categoryType: categoryType,

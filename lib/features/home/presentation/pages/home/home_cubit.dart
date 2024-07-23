@@ -15,20 +15,15 @@ part 'home_cubit.freezed.dart';
 @injectable
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(
-    this.expensesUseCase,
-    this.defaultCategoriesUseCase,
-    this.getAccountUseCase,
-    this.getCategoryUseCase,
-    this.getExpensesFromCategoryIdUseCase,
+    this._getAccountUseCase,
+    this._getCategoryUseCase,
+    this._getExpensesFromCategoryIdUseCase,
     this._getTransactionsByAccountIdUseCase,
   ) : super(const HomeState.currentIndex(0));
 
-  final GetDefaultCategoriesUseCase defaultCategoriesUseCase;
-  final GetTransactionsUseCase expensesUseCase;
-  final GetAccountUseCase getAccountUseCase;
-  final GetCategoryUseCase getCategoryUseCase;
-  final GetTransactionsByCategoryIdUseCase getExpensesFromCategoryIdUseCase;
-
+  final GetAccountUseCase _getAccountUseCase;
+  final GetCategoryUseCase _getCategoryUseCase;
+  final GetTransactionsByCategoryIdUseCase _getExpensesFromCategoryIdUseCase;
   final GetTransactionsByAccountIdUseCase _getTransactionsByAccountIdUseCase;
 
   PageType getPageFromIndex() {
@@ -60,13 +55,13 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   CategoryEntity? fetchCategoryFromId(int categoryId) =>
-      getCategoryUseCase(GetCategoryParams(categoryId));
+      _getCategoryUseCase(GetCategoryParams(categoryId));
 
   AccountEntity? fetchAccountFromId(int? accountId) =>
-      getAccountUseCase(GetAccountParams(accountId));
+      _getAccountUseCase(GetAccountParams(accountId));
 
   List<TransactionEntity> fetchExpensesFromCategoryId(int categoryId) =>
-      getExpensesFromCategoryIdUseCase(
+      _getExpensesFromCategoryIdUseCase(
           ParamsGetTransactionsByCategoryId(categoryId));
 
   List<TransactionEntity> fetchTransactionsFromAccountId(int accountId) =>

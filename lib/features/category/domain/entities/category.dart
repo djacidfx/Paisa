@@ -10,7 +10,6 @@ class CategoryEntity with _$CategoryEntity {
     String? description,
     required int icon,
     @Default(false) bool isBudget,
-    @Default(false) bool isDefault,
     required String name,
     @Default(CategoryType.income) CategoryType categoryType,
     int? superId,

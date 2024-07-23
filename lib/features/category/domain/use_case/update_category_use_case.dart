@@ -24,7 +24,6 @@ class UpdateCategoryUseCase
       budget: params.budget,
       desc: params.description,
       isBudget: params.isBudget,
-      isDefault: params.isDefault,
       categoryType: params.categoryType,
     );
   }
@@ -39,9 +38,7 @@ class UpdateCategoryParams with _$UpdateCategoryParams {
     String? description,
     required int icon,
     @Default(false) bool isBudget,
-    @Default(false) bool isDefault,
-    @Default(false) bool isIncomeOrExpense,
     required String name,
-    @Default(CategoryType.income) CategoryType categoryType,
+    required CategoryType categoryType,
   }) = _UpdateCategoryParams;
 }

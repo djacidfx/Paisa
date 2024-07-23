@@ -22,7 +22,6 @@ mixin _$AddCategoryParams {
   String? get description => throw _privateConstructorUsedError;
   int get icon => throw _privateConstructorUsedError;
   bool get isBudget => throw _privateConstructorUsedError;
-  bool get isDefault => throw _privateConstructorUsedError;
   CategoryType get categoryType => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -43,7 +42,6 @@ abstract class $AddCategoryParamsCopyWith<$Res> {
       String? description,
       int icon,
       bool isBudget,
-      bool isDefault,
       CategoryType categoryType});
 }
 
@@ -66,7 +64,6 @@ class _$AddCategoryParamsCopyWithImpl<$Res, $Val extends AddCategoryParams>
     Object? description = freezed,
     Object? icon = null,
     Object? isBudget = null,
-    Object? isDefault = null,
     Object? categoryType = null,
   }) {
     return _then(_value.copyWith(
@@ -94,10 +91,6 @@ class _$AddCategoryParamsCopyWithImpl<$Res, $Val extends AddCategoryParams>
           ? _value.isBudget
           : isBudget // ignore: cast_nullable_to_non_nullable
               as bool,
-      isDefault: null == isDefault
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool,
       categoryType: null == categoryType
           ? _value.categoryType
           : categoryType // ignore: cast_nullable_to_non_nullable
@@ -121,7 +114,6 @@ abstract class _$$AddCategoryParamsImplCopyWith<$Res>
       String? description,
       int icon,
       bool isBudget,
-      bool isDefault,
       CategoryType categoryType});
 }
 
@@ -142,7 +134,6 @@ class __$$AddCategoryParamsImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? icon = null,
     Object? isBudget = null,
-    Object? isDefault = null,
     Object? categoryType = null,
   }) {
     return _then(_$AddCategoryParamsImpl(
@@ -170,10 +161,6 @@ class __$$AddCategoryParamsImplCopyWithImpl<$Res>
           ? _value.isBudget
           : isBudget // ignore: cast_nullable_to_non_nullable
               as bool,
-      isDefault: null == isDefault
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool,
       categoryType: null == categoryType
           ? _value.categoryType
           : categoryType // ignore: cast_nullable_to_non_nullable
@@ -192,8 +179,7 @@ class _$AddCategoryParamsImpl implements _AddCategoryParams {
       this.description,
       required this.icon,
       this.isBudget = false,
-      this.isDefault = false,
-      this.categoryType = CategoryType.income});
+      required this.categoryType});
 
   @override
   final String name;
@@ -209,15 +195,11 @@ class _$AddCategoryParamsImpl implements _AddCategoryParams {
   @JsonKey()
   final bool isBudget;
   @override
-  @JsonKey()
-  final bool isDefault;
-  @override
-  @JsonKey()
   final CategoryType categoryType;
 
   @override
   String toString() {
-    return 'AddCategoryParams(name: $name, budget: $budget, color: $color, description: $description, icon: $icon, isBudget: $isBudget, isDefault: $isDefault, categoryType: $categoryType)';
+    return 'AddCategoryParams(name: $name, budget: $budget, color: $color, description: $description, icon: $icon, isBudget: $isBudget, categoryType: $categoryType)';
   }
 
   @override
@@ -233,15 +215,13 @@ class _$AddCategoryParamsImpl implements _AddCategoryParams {
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.isBudget, isBudget) ||
                 other.isBudget == isBudget) &&
-            (identical(other.isDefault, isDefault) ||
-                other.isDefault == isDefault) &&
             (identical(other.categoryType, categoryType) ||
                 other.categoryType == categoryType));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, name, budget, color, description,
-      icon, isBudget, isDefault, categoryType);
+      icon, isBudget, categoryType);
 
   @JsonKey(ignore: true)
   @override
@@ -259,8 +239,7 @@ abstract class _AddCategoryParams implements AddCategoryParams {
       final String? description,
       required final int icon,
       final bool isBudget,
-      final bool isDefault,
-      final CategoryType categoryType}) = _$AddCategoryParamsImpl;
+      required final CategoryType categoryType}) = _$AddCategoryParamsImpl;
 
   @override
   String get name;
@@ -274,8 +253,6 @@ abstract class _AddCategoryParams implements AddCategoryParams {
   int get icon;
   @override
   bool get isBudget;
-  @override
-  bool get isDefault;
   @override
   CategoryType get categoryType;
   @override

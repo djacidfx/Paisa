@@ -17,6 +17,8 @@ class CategoryTypeAdapter extends TypeAdapter<CategoryType> {
         return CategoryType.income;
       case 1:
         return CategoryType.expense;
+      case 2:
+        return CategoryType.transfer;
       default:
         return CategoryType.income;
     }
@@ -30,6 +32,9 @@ class CategoryTypeAdapter extends TypeAdapter<CategoryType> {
         break;
       case CategoryType.expense:
         writer.writeByte(1);
+        break;
+      case CategoryType.transfer:
+        writer.writeByte(2);
         break;
     }
   }

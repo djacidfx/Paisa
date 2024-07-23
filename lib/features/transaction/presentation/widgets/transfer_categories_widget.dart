@@ -6,6 +6,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 import 'package:paisa/config/routes.dart';
 import 'package:paisa/core/common.dart';
+import 'package:paisa/core/common_enum.dart';
 import 'package:paisa/core/widgets/paisa_widgets/paisa_pill_chip.dart';
 import 'package:paisa/features/category/data/model/category_model.dart';
 import 'package:paisa/features/category/domain/entities/category.dart';
@@ -21,7 +22,7 @@ class TransferCategoriesWidget extends StatelessWidget {
       valueListenable: getIt<Box<CategoryModel>>().listenable(),
       builder: (context, value, child) {
         final List<CategoryEntity> categories =
-            value.values.transferCategory.toEntities();
+            value.filterType(CategoryType.transfer);
         if (categories.isEmpty) {
           return ListTile(
             onTap: () async {

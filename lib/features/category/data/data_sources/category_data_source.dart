@@ -19,8 +19,6 @@ abstract interface class CategoryDataSource {
   Future<void> update(CategoryModel categoryModel);
 
   Future<void> clear();
-
-  List<CategoryModel> defaultCategories();
 }
 
 @LazySingleton(as: CategoryDataSource)
@@ -43,13 +41,6 @@ class LocalCategoryManagerDataSourceImpl implements CategoryDataSource {
 
   @override
   Future<void> clear() => categoryBox.clear();
-
-  @override
-  List<CategoryModel> defaultCategories() {
-    return categoryBox.values
-        .where((element) => element.isTransferCategory)
-        .toList();
-  }
 
   @override
   Future<void> delete(int key) async {

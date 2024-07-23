@@ -8,9 +8,13 @@ class CategoryListMobileWidget extends StatelessWidget {
   const CategoryListMobileWidget({
     super.key,
     required this.categories,
+    required this.onTap,
+    required this.onLongPress,
   });
 
   final List<CategoryEntity> categories;
+  final Function(String categoryName, int categoryId) onLongPress;
+  final Function(int categoryId) onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,11 @@ class CategoryListMobileWidget extends StatelessWidget {
       itemCount: categories.length,
       shrinkWrap: true,
       itemBuilder: (_, index) {
-        return CategoryItemMobileWidget(category: categories[index]);
+        return CategoryItemMobileWidget(
+          category: categories[index],
+          onTap: onTap,
+          onLongPress: onLongPress,
+        );
       },
     );
   }
