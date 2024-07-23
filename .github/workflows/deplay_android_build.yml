@@ -55,11 +55,13 @@ jobs:
           name: android-apks
           path: build/outputs/apk/*.apk
           if-no-files-found: error
+          retention-days: 1
       - name: Upload Android App Bundle
         uses: actions/upload-artifact@v4
         with:
           name: android-aab
           path: build/app/outputs/bundle/prodRelease/app-prod-release.aab
+          retention-days: 1
           if-no-files-found: error
 
   build_ios:
@@ -170,6 +172,12 @@ jobs:
         with:
           name: ios-release
           path: ios-release
+      - name: List Downloaded Files (Debug)
+        run: |
+          echo "Android APKs:"
+          ls -R android-apks
+          echo "iOS IPA:"
+          ls -R ios-release
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
@@ -178,3 +186,5 @@ jobs:
           generateReleaseNotes: true
           makeLatest: true
           bodyFile: "body.md"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
