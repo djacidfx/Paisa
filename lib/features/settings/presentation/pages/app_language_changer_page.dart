@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:paisa/config/routes.dart';
 import 'package:paisa/core/common.dart';
-import 'package:paisa/core/widgets/paisa_widgets/paisa_annotate_region_widget.dart';
+import 'package:paisa/core/widgets/paisa_widget.dart';
 
 class AppLanguageChangerPage extends StatefulWidget {
   const AppLanguageChangerPage({
@@ -22,23 +22,22 @@ class AppLanguageChangerPage extends StatefulWidget {
 
 class _AppLanguageChangerPageState extends State<AppLanguageChangerPage> {
   final List<LanguageEntity> languages = Languages.languages.sorted(
-    (a, b) => a.value.compareTo(b.value),
+    (a, b) => a.englishName.compareTo(b.englishName),
   );
 
   late String? selectedLanguage = widget.currentLanguage;
 
   Future<void> _save(BuildContext context) async {
     await settings.put(appLanguageKey, selectedLanguage);
-    if (!mounted) {
-      return;
+    if (context.mounted) {
+      context.pop();
     }
-    context.pop();
   }
 
   @override
   Widget build(BuildContext context) {
     return PaisaAnnotatedRegionWidget(
-      color: context.background,
+      color: context.surface,
       child: PaisaScaffold(
         appBar: context.materialYouAppBar(context.loc.chooseAppLanguage),
         body: ListView.builder(
@@ -47,6 +46,9 @@ class _AppLanguageChangerPageState extends State<AppLanguageChangerPage> {
           itemBuilder: (_, index) {
             final LanguageEntity entity = languages[index];
             return ListTile(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
               selectedTileColor: context.primaryContainer,
               selectedColor: context.onPrimaryContainer,
               selected: selectedLanguage == entity.code,
@@ -71,34 +73,16 @@ class _AppLanguageChangerPageState extends State<AppLanguageChangerPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 16),
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(24)),
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 12,
-                    ),
-                  ),
-                  onPressed: () => Navigator.pop(context),
-                  child: Text(context.loc.cancel),
+                child: PaisaButton.mediumText(
+                  text: context.loc.cancel,
+                  onPressed: () => context.pop(),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 16.0, bottom: 16),
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(24)),
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 12,
-                    ),
-                  ),
+                child: PaisaButton.mediumElevated(
+                  text: context.loc.done,
                   onPressed: () => _save(context),
-                  child: Text(context.loc.done),
                 ),
               ),
             ],
@@ -113,37 +97,40 @@ class LanguageEntity {
   const LanguageEntity({
     required this.code,
     required this.value,
+    required this.englishName,
   });
 
   final String code;
   final String value;
+  final String englishName;
 }
 
 class Languages {
   const Languages._();
 
   static const languages = [
-    LanguageEntity(code: 'en', value: 'English'),
-    LanguageEntity(code: 'ar', value: 'العربية'),
-    LanguageEntity(code: 'es', value: 'Spanish'),
-    LanguageEntity(code: 'pl', value: 'Polish'),
-    LanguageEntity(code: 'ne', value: 'Nepali'),
-    LanguageEntity(code: 'cs', value: 'Czech'),
-    LanguageEntity(code: 'uk', value: 'Ukrainian'),
-    LanguageEntity(code: 'be', value: 'Belarusian'),
-    LanguageEntity(code: 'de', value: 'German'),
-    LanguageEntity(code: 'fr', value: 'French'),
-    LanguageEntity(code: 'it', value: 'Italian'),
-    LanguageEntity(code: 'kn', value: 'Kannada (IN)'),
-    LanguageEntity(code: 'pt', value: 'Portuguese'),
-    LanguageEntity(code: 'ru', value: 'Russian'),
-    LanguageEntity(code: 'ta', value: 'Tamil (IN)'),
-    LanguageEntity(code: 'ml', value: 'Malayalam (IN)'),
-    LanguageEntity(code: 'vi', value: 'Vietnamese'),
-    LanguageEntity(code: 'zh', value: 'Chinese'),
-    LanguageEntity(code: 'zh_TW', value: 'Traditional Chinese'),
-    LanguageEntity(code: 'gu', value: 'Gujarati (IN)'),
-    LanguageEntity(code: 'tr', value: 'Turkish'),
-    LanguageEntity(code: 'ur', value: 'اردو'),
+    LanguageEntity(code: 'en', value: 'English', englishName: 'English'),
+    LanguageEntity(code: 'ar', value: 'العربية', englishName: 'Arabic'),
+    LanguageEntity(code: 'es', value: 'Española', englishName: 'Spanish'),
+    LanguageEntity(code: 'pl', value: 'Polski', englishName: 'Polish'),
+    LanguageEntity(code: 'ne', value: 'नेपाली', englishName: 'Nepali'),
+    LanguageEntity(code: 'cs', value: 'čeština', englishName: 'Czech'),
+    LanguageEntity(code: 'uk', value: 'українська', englishName: 'Ukrainian'),
+    LanguageEntity(code: 'be', value: 'беларуская', englishName: 'Belarusian'),
+    LanguageEntity(code: 'de', value: 'Deutsch', englishName: 'German'),
+    LanguageEntity(code: 'fr', value: 'Français', englishName: 'French'),
+    LanguageEntity(code: 'it', value: 'Italiana', englishName: 'Italian'),
+    LanguageEntity(code: 'kn', value: 'ಕನ್ನಡ (IN)', englishName: 'Kannada'),
+    LanguageEntity(code: 'pt', value: 'Português', englishName: 'Portuguese'),
+    LanguageEntity(code: 'ru', value: 'русский', englishName: 'Russian'),
+    LanguageEntity(code: 'ta', value: 'தமிழ் (IN)', englishName: 'Tamil'),
+    LanguageEntity(code: 'ml', value: 'മലയാളം (IN)', englishName: 'Malayalam'),
+    LanguageEntity(code: 'vi', value: 'Tiếng Việt', englishName: 'Vietnamese'),
+    LanguageEntity(code: 'zh', value: '中国人', englishName: 'Chinese'),
+    LanguageEntity(
+        code: 'zh_TW', value: '繁体中文', englishName: 'Traditional Chinese'),
+    LanguageEntity(code: 'gu', value: 'ગુજરાતી (IN)', englishName: 'Gujarati'),
+    LanguageEntity(code: 'tr', value: 'Türkçe', englishName: 'Turkish'),
+    LanguageEntity(code: 'ur', value: 'اردو', englishName: 'Urdu'),
   ];
 }
