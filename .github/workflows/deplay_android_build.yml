@@ -100,7 +100,7 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
       - name: Build iOS Release
         run: |
-          flutter build ipa --release --flavor prod --no-tree-shake-icons --export-options-plist=ios/exportOptions.plist --allow-provisioning-updates
+          flutter build ipa --release --flavor prod --no-tree-shake-icons --export-options-plist=ios/Runner/exportOptions.plist
           ls -R build/ios/ipa  # Debug: List contents of build directory
       - name: Upload iOS Release
         uses: actions/upload-artifact@v4
@@ -163,7 +163,7 @@ jobs:
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "android-apks/*.apk,ios-release/*.ipa"
+          artifacts: "build/app/outputs/flutter-apk/*.apk,ios-release/*.ipa"
           token: ${{ secrets.GITHUB_TOKEN }}
           generateReleaseNotes: true
           makeLatest: true
