@@ -5,10 +5,10 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/common_enum.dart';
 import 'package:paisa/features/home/presentation/controller/summary_controller.dart';
-import 'package:paisa/features/home/presentation/pages/summary/widgets/filter_home_expenses_widget.dart';
+import 'package:paisa/features/account/presentation/widgets/account_filter_transactions_widget.dart';
 
-class TransactionsHeaderWidget extends StatelessWidget {
-  const TransactionsHeaderWidget({
+class AccountTransactionsHeaderWidget extends StatelessWidget {
+  const AccountTransactionsHeaderWidget({
     super.key,
     required this.summaryController,
   });
@@ -55,7 +55,7 @@ class TransactionsHeaderWidget extends StatelessWidget {
               ),
             ),
             builder: (context) {
-              return FilterAccountTransactionsWidget(
+              return AccountFilterTransactionsWidget(
                   summaryController: summaryController);
             },
           );

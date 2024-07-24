@@ -100,7 +100,7 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
       - name: Build iOS Release
         run: |
-          flutter build ipa --release --flavor prod --no-tree-shake-icons --export-options-plist=ios/Runner/exportOptions.plist
+          flutter build ipa --release --flavor prod --no-tree-shake-icons --export-options-plist=ios/exportOptions.plist --allow-provisioning-updates
           ls -R build/ios/ipa  # Debug: List contents of build directory
       - name: Upload iOS Release
         uses: actions/upload-artifact@v4

@@ -10,7 +10,7 @@ import 'package:paisa/features/account/presentation/cubit/accounts_cubit.dart';
 import 'package:paisa/features/account/presentation/widgets/accounts_page_view_widget.dart';
 import 'package:paisa/features/home/presentation/controller/summary_controller.dart';
 import 'package:paisa/features/home/presentation/pages/summary/widgets/transaction_item_widget.dart';
-import 'package:paisa/features/home/presentation/pages/summary/widgets/transactions_header_widget.dart';
+import 'package:paisa/features/account/presentation/widgets/account_transactions_header_widget.dart';
 import 'package:paisa/features/transaction/domain/entities/transaction_entity.dart';
 import 'package:provider/provider.dart';
 
@@ -33,7 +33,7 @@ class AccountsHorizontalTabletPage extends StatelessWidget {
               SliverList(
                 delegate: SliverChildListDelegate(
                   [
-                    TransactionsHeaderWidget(
+                    AccountTransactionsHeaderWidget(
                       summaryController:
                           Provider.of<SummaryController>(context),
                     ),

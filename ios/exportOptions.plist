@@ -8,5 +8,7 @@
 	<string>app-store</string>
 	<key>teamID</key>
 	<string>3272RSK4SY</string>
+	<key>signingStyle</key>
+    <string>automatic</string>
 </dict>
 </plist>

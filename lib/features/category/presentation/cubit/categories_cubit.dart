@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:paisa/features/category/domain/use_case/category_use_case.dart';
 import 'package:paisa/features/transaction/domain/use_case/transaction_use_case.dart';

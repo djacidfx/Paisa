@@ -167,119 +167,122 @@ Future<void> _updateHomeScreenWidget(
   final String totalExpenseBalanceFormatted =
       totalExpenseBalance.toFormateCurrency(context);
   await HomeWidget.saveWidgetData('bgColor', chopToJavaInt(bgColor));
-  final Widget lineChart = Material(
-    color: context.primaryContainer,
-    child: Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Column(
+
+  if (context.mounted) {
+    final Widget lineChart = Material(
+      color: context.primaryContainer,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Column(
+                children: [
+                  Text(
+                    'Total Balance',
+                    style: GoogleFonts.outfit(fontSize: 16),
+                  ),
+                  Text(
+                    totalExpenseBalanceFormatted,
+                    style: GoogleFonts.outfit(fontSize: 24.sp),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 16.h),
+            Row(
               children: [
-                Text(
-                  'Total Balance',
-                  style: GoogleFonts.outfit(fontSize: 16),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.green.withOpacity(0.24),
+                        ),
+                        padding: EdgeInsets.all(8.0.w),
+                        margin: const EdgeInsets.all(8),
+                        child: const Icon(
+                          Icons.south_west,
+                          color: Colors.green,
+                        ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Income',
+                              style: GoogleFonts.outfit(
+                                fontSize: 16,
+                                color: Colors.green,
+                              ),
+                            ),
+                            Text(
+                              totalIncomeFormatted,
+                              style: GoogleFonts.outfit(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Text(
-                  totalExpenseBalanceFormatted,
-                  style: GoogleFonts.outfit(fontSize: 24.sp),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.red.withOpacity(0.24),
+                        ),
+                        padding: EdgeInsets.all(8.0.w),
+                        margin: const EdgeInsets.all(8),
+                        child: const Icon(
+                          Icons.north_east,
+                          color: Colors.red,
+                        ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Expense',
+                              style: GoogleFonts.outfit(
+                                fontSize: 16,
+                                color: Colors.red,
+                              ),
+                            ),
+                            Text(
+                              totalExpensesFormatted,
+                              style: GoogleFonts.outfit(fontSize: 18.sp),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-          ),
-          SizedBox(height: 16.h),
-          Row(
-            children: [
-              Expanded(
-                child: Row(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.green.withOpacity(0.24),
-                      ),
-                      padding: EdgeInsets.all(8.0.w),
-                      margin: const EdgeInsets.all(8),
-                      child: const Icon(
-                        Icons.south_west,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Income',
-                            style: GoogleFonts.outfit(
-                              fontSize: 16,
-                              color: Colors.green,
-                            ),
-                          ),
-                          Text(
-                            totalIncomeFormatted,
-                            style: GoogleFonts.outfit(fontSize: 18),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Row(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.red.withOpacity(0.24),
-                      ),
-                      padding: EdgeInsets.all(8.0.w),
-                      margin: const EdgeInsets.all(8),
-                      child: const Icon(
-                        Icons.north_east,
-                        color: Colors.red,
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Expense',
-                            style: GoogleFonts.outfit(
-                              fontSize: 16,
-                              color: Colors.red,
-                            ),
-                          ),
-                          Text(
-                            totalExpensesFormatted,
-                            style: GoogleFonts.outfit(fontSize: 18.sp),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
-  await HomeWidget.renderFlutterWidget(
-    lineChart,
-    key: 'lineChart',
-    logicalSize: const Size(520, 550),
-  );
-  await HomeWidget.updateWidget(
-    name: 'Paisa',
-    iOSName: 'PaisaHomeWidgetReceiver',
-    androidName: 'PaisaHomeWidgetReceiver',
-    qualifiedAndroidName: 'dev.hemanths.paisa.glance.PaisaHomeWidgetReceiver',
-  );
+    );
+    await HomeWidget.renderFlutterWidget(
+      lineChart,
+      key: 'lineChart',
+      logicalSize: const Size(520, 550),
+    );
+    await HomeWidget.updateWidget(
+      name: 'Paisa',
+      iOSName: 'PaisaHomeWidgetReceiver',
+      androidName: 'PaisaHomeWidgetReceiver',
+      qualifiedAndroidName: 'dev.hemanths.paisa.glance.PaisaHomeWidgetReceiver',
+    );
+  }
 }
 
 int chopToJavaInt(int result) {

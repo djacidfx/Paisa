@@ -26,6 +26,7 @@ class CategoryListWidget extends StatelessWidget {
             categoryGrouped[index];
         final Color color = Color(map.key.color);
         return InkWell(
+          borderRadius: BorderRadius.circular(8),
           onTap: () {
             TransactionsByCategoryPageData(map.key.superId!).push(context);
           },

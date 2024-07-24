@@ -33,34 +33,34 @@ class FilterTabs extends StatelessWidget {
   }
 }
 
-class FilterDropDown extends StatefulWidget {
+class FilterDropDown extends StatelessWidget {
   const FilterDropDown({super.key});
 
   @override
-  State<FilterDropDown> createState() => _FilterDropDownState();
-}
-
-class _FilterDropDownState extends State<FilterDropDown> {
-  @override
   Widget build(BuildContext context) {
-    return DropdownButtonHideUnderline(
-      child: DropdownButton<FilterExpense>(
-        dropdownColor: context.primaryContainer,
-        value: getIt<SummaryController>().filterExpenseNotifier.value,
-        items: FilterExpense.values
-            .map(
-              (e) => DropdownMenuItem(
-                value: e,
-                child: Text(e.stringValue(context)),
-              ),
-            )
-            .toList(),
-        onChanged: (value) {
-          if (value != null) {
-            getIt<SummaryController>().filterExpenseNotifier.value = value;
-          }
-        },
-      ),
+    return ValueListenableBuilder<FilterExpense>(
+      valueListenable: getIt<SummaryController>().filterExpenseNotifier,
+      builder: (context, snapshot, child) {
+        return DropdownButtonHideUnderline(
+          child: DropdownButton<FilterExpense>(
+            dropdownColor: context.primaryContainer,
+            value: snapshot,
+            items: FilterExpense.values
+                .map(
+                  (e) => DropdownMenuItem(
+                    value: e,
+                    child: Text(e.stringValue(context)),
+                  ),
+                )
+                .toList(),
+            onChanged: (value) {
+              if (value != null) {
+                getIt<SummaryController>().filterExpenseNotifier.value = value;
+              }
+            },
+          ),
+        );
+      },
     );
   }
 }
